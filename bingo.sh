@@ -13,7 +13,7 @@ wxappUnpacker_pkg() {
 
 wxappUnpacker() {
   de_dir=$1
-    if [ -z "$1" ]
+    if [ -z $1 ]
       then
         de_dir=`pwd`
       fi
@@ -27,7 +27,7 @@ wxappUnpacker() {
 }
 
 de_pkg() {
-  if [ "-d" == "$1" ]
+  if [ -d $1 ]
     then
       wxappUnpacker $1 $2
     else
