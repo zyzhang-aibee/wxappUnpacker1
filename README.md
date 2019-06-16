@@ -5,6 +5,7 @@
 - 修复了项目中若干个bug，包含$gwx is not defined 和__vd_version_info__ is not defined，但不限于此。
 - 尽管已经努力修复程序中的bug，但仍然有一些结构性的bug无法修复，除非重新设计反编译的架构。
 - 对插件的支持仍然不够友好
+- 本项目推荐的运行环境是git bash，支持window和mac
 
 
 # 分包功能
