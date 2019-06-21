@@ -1,0 +1,189 @@
+下面讲解需要更改的源码和操作步骤：
+
+修改wxappUnpacker中wuWxss.js部分代码，具体如下：
+
+functionrunVM(name,code){
+
+    let wxAppCode={},handle={cssFile:name};
+
+    let vm=new VM({sandbox:Object.assign(new GwxCfg(),{__wxAppCode__:wxAppCode,setCssToHead:cssRebuild.bind(handle)})});
+
+    vm.run(code);
+
+    for(let name in wxAppCode)if(name.endsWith(".wxss")){
+
+        handle.cssFile=path.resolve(frameName,"..",name);
+
+        wxAppCode[name]();
+
+    }
+
+}
+
+修改为
+
+functionrunVM(name,code){
+
+    let wxAppCode={},handle={cssFile:name};
+
+    let gg = new GwxCfg();
+
+    let tsandbox ={$gwx:GwxCfg.prototype["$gwx"],__mainPageFrameReady__:GwxCfg.prototype["$gwx"],__wxAppCode__:wxAppCode,setCssToHead:cssRebuild.bind(handle)};
+
+    let vm = new VM({sandbox:tsandbox});
+
+    vm.run(code);
+
+    for(let name in wxAppCode)if(name.endsWith(".wxss")){
+
+        handle.cssFile=path.resolve(frameName,"..",name);
+
+        wxAppCode[name]();
+
+    }
+
+}
+
+问题完美解决
+
+由于大神qwerty472123代码的一些bug会导致报错：
+
+ __vd_version_info__ is not defined
+
+具体:
+
+D:\xiaochengxu\my_test_decompiler\wxappUnpacker-master\node_modules\vm2\lib\main.js:224
+
+                        throwthis._internal.Decontextify.value(e);
+
+                        ^
+
+ReferenceError:__vd_version_info__ is not defined
+
+    at vm.js:3:3
+
+    at Script.runInContext (vm.js:130:20)
+
+    at VM.run(D:\xiaochengxu\my_test_decompiler\wxappUnpacker-master\node_modules\vm2\lib\main
+
+.js:218:62)
+
+    at runVM (D:\xiaochengxu\my_test_decompiler\wxappUnpacker-master\wuWxss.js:69:6)
+
+    at runOnce(D:\xiaochengxu\my_test_decompiler\wxappUnpacker-master\wuWxss.js:86:27)
+
+    at Array.preRun(D:\xiaochengxu\my_test_decompiler\wxappUnpacker-master\wuWxss.js:166:5)
+
+    at CntEvent.decount (D:\xiaochengxu\my_test_decompiler\wxappUnpacker-master\wuLib.js:17:43)
+
+    at ioLimit.runWithCb.err(D:\xiaochengxu\my_test_decompiler\wxappUnpacker-master\wuLib.js:7
+
+3:11)
+
+    at agent(D:\xiaochengxu\my_test_decompiler\wxappUnpacker-master\wuLib.js:54:14)
+
+at FSReqWrap.args [as oncomplete] (fs.js:140:20)
+
+解决方案：
+
+wuWxss.jss找到函数wu.scanDirByExt内部的代码
+
+code=code.slice(code.indexOf('var setCssToHead = function(file, _xcInvalid'));
+
+code=code.slice(code.indexOf('\nvar _C= ')+1);
+
+let oriCode=code;
+
+code=code.slice(0,code.indexOf('\n'));
+
+let vm=new VM({sandbox:{}});
+
+pureData=vm.run(code+"\n_C");
+
+let mainCode=oriCode.slice(oriCode.indexOf("setCssToHead"),oriCode.lastIndexOf(";var __pageFrameEndTime__"));
+
+然后将其替换成：
+
+code = code.replace(/display:-webkit-box;display:-webkit-flex;/gm, '');
+
+let scriptCode = code;
+
+//extract script content from html
+
+if (frameFile.endsWith(".html")) {
+
+    try {
+
+        const $ = cheerio.load(code);
+
+        scriptCode = [].join.apply($('html').find('script').map(function (item) {
+
+            return $(this).html();
+
+        }, "\n"));
+
+    } catch (e) {
+
+        //ignore
+
+    }
+
+}
+
+let window = {
+
+    screen: {
+
+        width: 720,
+
+        height: 1028,
+
+        orientation: {
+
+            type: 'vertical'
+
+        }
+
+    }
+
+};
+
+let navigator = {
+
+    userAgent: "iPhone"
+
+};
+
+scriptCode = scriptCode.slice(scriptCode.lastIndexOf('window.__wcc_version__'));
+
+let mainCode = 'window= ' + JSON.stringify(window) +
+
+    ';\nnavigator=' + JSON.stringify(navigator) +
+
+    ';\nvar __mainPageFrameReady__ = window.__mainPageFrameReady__ || function(){};var __WXML_GLOBAL__={entrys:{},defines:{},modules:{},ops:[],wxs_nf_init:undefined,total_ops:0};var __vd_version_info__=__vd_version_info__||{}' +
+
+    ";\n" + scriptCode;
+
+//remove setCssToHead function
+
+mainCode = mainCode.replace('var setCssToHead = function', 'var setCssToHead2 = function');
+
+code = code.slice(code.lastIndexOf('var setCssToHead = function(file, _xcInvalid'));
+
+code = code.slice(code.lastIndexOf('\nvar _C= ') + 1);
+
+code = code.slice(0, code.indexOf('\n'));
+
+let vm = new VM({sandbox: {}});
+
+pureData = vm.run(code + "\n_C");
+
+这样问题就能完美解决。
+
+考虑到大神wxappUnpacker项目中仍然有很多bug（包含但不限于结构设计上的不合理），建议采用下面的项目进行反编译，我修复了wxappUnpacker项目中的一些bug（包含但不限于$gwx is not defined 和__vd_version_info__ is not defined，并且它支持分包）
+
+有的朋友使用了上面代码又碰到其他的bug，建议使用下面“分包的实现”项目，将项目下载下来，然后在自己电脑上安装 git bash ，运行命令：
+
+1：解包主包 ./bingo.sh testpkg/master-xxx.wxapkg
+
+2：解包子包 ./bingo.sh testpkg/sub-1-xxx.wxapkg -s=../master-xxx
