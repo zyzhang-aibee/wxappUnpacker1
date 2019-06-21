@@ -187,3 +187,5 @@ pureData = vm.run(code + "\n_C");
 1：解包主包 ./bingo.sh testpkg/master-xxx.wxapkg
 
 2：解包子包 ./bingo.sh testpkg/sub-1-xxx.wxapkg -s=../master-xxx
+
+分包的实现：https://github.com/Toruk-Makto66/wxappUnpacker/tree/master
