@@ -29,3 +29,35 @@ TIP
 │       ├── app.json
 ```
 
+
+安装依赖
+
+```
+npm install esprima -g
+npm install css-tree -g
+npm install cssbeautify -g
+npm install vm2 -g
+npm install uglify-es -g
+npm install js-beautify -g
+npm install escodegen -g
+```
+解决小程序反编译问题 `Cannot find module 'uglify-es'`
+
+https://zhuanlan.zhihu.com/p/136886986
+
+```
+npm install uglify-es --save
+npm install esprima --save
+npm install css-tree --save
+npm install cssbeautify --save
+npm install vm2 --save
+npm install uglify-es --save
+npm install js-beautify --save
+npm install escodegen --save
+npm install cheerio --save
+```
+
+
+
+
+
