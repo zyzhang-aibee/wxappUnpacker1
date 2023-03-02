@@ -1,3 +1,38 @@
+## wxapkg header
+
+![image](https://user-images.githubusercontent.com/16593068/222367446-1b9a35ad-892a-43f0-afcd-19dbe9e0d789.png)
+
+## 解压命令
+
+![image](https://user-images.githubusercontent.com/16593068/222367618-cba877a8-a08c-4816-b51c-b6dcb6012854.png)
+
+```
+>node wuWxapkg.js testpkg\2132353527_231.wxapkg
+Unpack file testpkg\2132353527_231.wxapkg...
+
+Header info:
+  firstMark: 0xbe
+  unknownInfo:  0
+  infoListLength:  6968
+  dataLength:  1504819
+  lastMark: 0xed
+
+File list info:
+  fileCount:  106
+Saving files...
+Unpack done.
+Split app-service.js and make up configs & wxss & wxml & wxs...
+deal config ok
+deal js ok
+deal wxss.js ok
+deal css ok
+=======================================================
+NOTICE: SubPackages exist in this package.
+Details:  12
+=======================================================
+Decompile ./common/components/album-success-tip/album-success-tip.wxml...
+Decompile success!
+```
 
 # 说明
 
