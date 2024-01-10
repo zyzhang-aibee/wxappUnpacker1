@@ -1,0 +1,9 @@
+<view class="container" id="CTR">
+    <user-header bind:handleMoreAction="handleMoreAction" canMakeSame="{{canMakeSame}}" dynamic="{{dynamic}}" followedFriends="{{followedFriends}}" isShowMoreBtn="{{isShowMoreBtn}}" page="{{page}}" showModify="{{showModify}}" user="{{dynamic.user}}"></user-header>
+    <view></view>
+    <dynamic-album album="{{dynamic}}" withoutAlbum="{{withoutAlbum}}" wx:if="{{dynamic.type===FEED_TYPE.ALBUM||dynamic.type===FEED_TYPE.ARTICLE}}"></dynamic-album>
+    <dynamic-comment album="{{dynamic}}" wx:if="{{dynamic.type===FEED_TYPE.ALBUM_COMMENT}}"></dynamic-comment>
+    <dynamic-pure-text dynamic="{{dynamic}}" wx:if="{{dynamic.type===FEED_TYPE.PURE_TEXT}}"></dynamic-pure-text>
+    <interaction dynamic="{{dynamic}}" page="{{page}}"></interaction>
+    <comment-zone dynamic="{{dynamic}}" fastEntryVisible="{{fastCommentEntryVisible}}" wx:if="{{!commentListBan&&dynamic.commentIds&&dynamic.commentIds.length>0}}"></comment-zone>
+</view>

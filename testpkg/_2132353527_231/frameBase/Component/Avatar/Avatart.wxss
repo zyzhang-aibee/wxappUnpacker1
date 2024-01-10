@@ -1,0 +1,10 @@
+.avatar {
+    display: inline-block;
+    position: relative;
+}
+
+.lb-icon {
+    position: absolute;
+    right: 0;
+    bottom: 3px;
+}

@@ -1,0 +1,26 @@
+<view class="start-view-wrap" style="font-size:{{fontSizeScale*10}}px">
+    <add-photo-view authorizeData="{{authorizeData}}" bindonaddphotostap="onAddPhotosTap" hasDraftPhoto="{{hasDraftPhoto}}" isNewUser="{{startData.isNewUser}}"></add-photo-view>
+    <block wx:if="{{!produce_tpl_sort&&!tpl_sort}}">
+        <recommend-tpl-view recommendTpl="{{recommendTpl}}" showMore="{{true}}" sortName="推荐模板" wx:if="{{!isNewPageB}}"></recommend-tpl-view>
+        <small-tools-view></small-tools-view>
+        <tpl-list-view bindtpltap="onTplTap" class="tpl-list-view" hasDraftPhoto="{{hasDraftPhoto}}" isNewUser="{{startData.isNewUser}}" playingTplIdx="{{playingTplIdx}}" tplList="{{recommendTpl}}" tplNums="{{recommendTpl.length}}" wx:if="{{isNewPageB}}"></tpl-list-view>
+    </block>
+    <block wx:else>
+        <small-tools-view></small-tools-view>
+        <view class="split-blank"></view>
+        <recommend-tpl-view recommendTpl="{{recommendTpl}}" showMore="{{true}}" showShadow="{{true}}" sortIndex="{{0}}" sortName="推荐模板"></recommend-tpl-view>
+        <recommend-tpl-view recommendTpl="{{item.tpl}}" sortIndex="{{index+1}}" sortName="{{item.name}}" wx:if="{{tpl_sort}}" wx:for="{{tplSortList}}" wx:key="index"></recommend-tpl-view>
+        <view class="sort-list-wrap" wx:if="{{produce_tpl_sort}}">
+            <view bindtap="goTplPage" class="tpl-sort-con" data-sort-index="{{index+1}}" wx:for="{{tplSortList}}" wx:key="index">
+                <image class="tpl-sort-img" mode="aspectFill" src="{{item.img}}"></image>
+                <view class="tpl-sort-title">{{item.name}}</view>
+                <view class="tpl-sort-tip">{{item.tip}}</view>
+            </view>
+            <view bindtap="goAllTplPage" class="tpl-sort-con">
+                <image class="tpl-sort-img" mode="aspectFill" src="{{more_img}}"></image>
+                <view class="tpl-sort-title">更多</view>
+                <view class="tpl-sort-tip">查看全部模板</view>
+            </view>
+        </view>
+    </block>
+</view>

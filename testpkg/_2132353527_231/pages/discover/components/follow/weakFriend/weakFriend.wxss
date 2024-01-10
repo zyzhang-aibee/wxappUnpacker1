@@ -1,0 +1,65 @@
+.container {
+    padding-top: 8px;
+    background: #F5F6F7;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    margin-bottom: 12px;
+    line-height: 20px;
+    font-size: 13px;
+    color: #3F3843;
+}
+
+.more-btn {
+    font-size: 11px;
+    color: #7E7E7E;
+}
+
+.swiper {
+    height: 162px;
+}
+
+.screen {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 106px;
+    padding-top: 19px;
+    padding-bottom: 22px;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+
+.card-empty {
+    visibility: hidden;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.nick {
+    width: 78px;
+    margin-top: 10px;
+    margin-bottom: 19px;
+    line-height: 20px;
+    font-size: 13px;
+    color: #444444;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

@@ -1,0 +1,44 @@
+.authorizer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.mini-comment-input {
+    box-shadow: 0 -2rpx 6rpx rgba(233,233,233,0.5);
+    padding: 24rpx 30rpx;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+}
+
+.comment-text-con {
+    flex: 1;
+    border-radius: 36rpx;
+    background-color: #F5F6F7;
+    padding: 12rpx 34rpx;
+    font-size: 26rpx;
+    line-height: 48rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.comment-empty {
+    color: #98959A;
+}
+
+.submit-btn {
+    margin-left: 39rpx;
+    background-color: #25ACFF;
+    border-radius: 6rpx;
+    padding: 4rpx 31rpx;
+    color: #fff;
+    font-size: 28rpx;
+    line-height: 48rpx;
+}
+
+.btn-disable {
+    opacity: 0.5;
+}

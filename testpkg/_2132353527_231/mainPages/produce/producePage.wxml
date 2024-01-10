@@ -1,0 +1,16 @@
+<custom-navigation-bar customNavigationBarData="{{customNavigationBarData}}" wx:if="{{hasFetchDraft}}"></custom-navigation-bar>
+<view bindtouchstart="onPageTap" class="start-page" wx:if="{{hasFetchDraft}}">
+    <helper-view authorizeData="{{authorizeData}}" bindsilent30s="onSilent30s" class="helper-view" currentPage="{{currentPage}}" showBigFontTip="{{showBigFontTip}}"></helper-view>
+    <authorize-view authorizeData="{{authorizeData}}"></authorize-view>
+    <start-view authorizeData="{{authorizeData}}" bindonaddphotostap="onAddPhotosTap" bindtpltap="onTplTap" class="start-view" startData="{{startData}}"></start-view>
+</view>
+<view class="loading-con" wx:else>
+    <view wx:if="{{!fetchDraftFail}}">加载中...</view>
+    <view bindtap="onFetchTap" class="fetch-btn" wx:else>重新加载</view>
+</view>
+<view class="scroll-tip" wx:if="{{showScrollTip}}">
+    <view class="tip-triangle"></view>
+    <view class="tip-text">还有更多模板效果</view>
+</view>
+<xng bind:onActionSheetShow="onActionSheetShow"></xng>
+<global-components></global-components>

@@ -1,0 +1,5 @@
+<view bindtap="goPublish" class="publish-btn" id="publishBtn">
+    <image class="add-icon" src="{{imgRoot}}/discover/follow.png"></image>
+    <view class="add-txt">{{title}}</view>
+</view>
+<wxs module="imgRoot" src="../../../../../common/wxs/imgRoot.wxs" />

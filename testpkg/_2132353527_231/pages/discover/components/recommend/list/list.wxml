@@ -1,0 +1,11 @@
+<view class="list">
+    <block wx:if="{{!list.length&&isFetching}}">
+        <dynamic-skeleton></dynamic-skeleton>
+        <dynamic-skeleton></dynamic-skeleton>
+        <dynamic-skeleton></dynamic-skeleton>
+    </block>
+    <block wx:for="{{list}}" wx:for-item="dynamic" wx:key="{{index}}">
+        <dynamic dynamic="{{dynamic}}" topic="{{topic}}" wx:if="{{!dynamic.ban&&dynamic.type&&(dynamic.type===FEED_TYPE.ALBUM||dynamic.type===FEED_TYPE.ARTICLE)}}"></dynamic>
+        <feed-ad index="{{index+1}}" type="{{dynamic}}" wx:else></feed-ad>
+    </block>
+</view>

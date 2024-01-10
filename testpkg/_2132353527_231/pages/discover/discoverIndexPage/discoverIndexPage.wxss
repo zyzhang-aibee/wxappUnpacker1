@@ -1,0 +1,8 @@
+.discover-page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 1.6;
+}

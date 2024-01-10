@@ -1,0 +1,3 @@
+<button bindgetuserinfo="onGotUserInfo" catchtap="{{effective&&!hasAuth?'':'onAuthed'}}" class="btn" openType="{{effective&&!hasAuth?'getUserInfo':''}}" style="{{style}}">
+    <slot></slot>
+</button>

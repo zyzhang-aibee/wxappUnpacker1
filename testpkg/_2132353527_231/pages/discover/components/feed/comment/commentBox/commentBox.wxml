@@ -1,0 +1,32 @@
+<view class="box {{withSeparator?'with-separator':''}}">
+    <view class="left">
+        <image lazyLoad catchtap="goProfilePage" class="avatar" mode="aspectFill" src="{{comment.user.hurl}}"></image>
+    </view>
+    <view class="content">
+        <view class="content-header">
+            <view class="userinfo">
+                <view catchtap="goProfilePage" class="nick">{{comment.user.nick}}</view>
+                <view class="time">{{moment.fromNow(comment.ct,30,'days','YY年MM月DD日')}}</view>
+            </view>
+            <view catchtap="handleFavor" class="favor" wx:if="{{canFavor}}">
+                <image lazyLoad class="favor-btn" src="{{imgRoot}}{{comment.favor.has_favor?'/play/liked.png':'/play/like.png'}}"></image>
+                <view class="favor-count">{{comment.favor.total||''}}</view>
+            </view>
+        </view>
+        <view catchtap="handleReply" class="comment-content">
+            <view class="comment-text" wx:if="{{comment.isCur}}">{{comment.to_user?'回复了'+comment.to_user.nick+'：':''}}{{comment.txt}}</view>
+            <block wx:else>
+                <view class="comment-text">{{comment.txt}}</view>
+                <view class="replied-comment" wx:if="{{comment.to_user}}">
+                    <view catchtap="goProfilePage" class="replied-nick" data-mid="{{comment.to_user.mid}}">@{{comment.to_user.nick}}</view>
+                    <view class="">{{comment.to_txt}}</view>
+                </view>
+            </block>
+        </view>
+        <view catchtap="handleReply" class="reply-btn">
+            <view class="reply-btn-text">{{comment.user.mid===xu.mid?'删除':'回复'}}</view>
+        </view>
+    </view>
+</view>
+<wxs module="moment" src="../../../../../../common/wxs/moment.wxs" />
+<wxs module="imgRoot" src="../../../../../../common/wxs/imgRoot.wxs" />

@@ -1,0 +1,36 @@
+<custom-navigation-bar customNavigationBarData="{{customNavigationBarData}}"></custom-navigation-bar>
+<form-id-collector>
+    <view class="discover-page">
+        <tab-bar bind:switchtab="onSwitchTab" blessInfo="{{blessInfo}}" curTab="{{curTabName}}" tabs="{{topics}}"></tab-bar>
+        <discover-swiper bind:handleMoreAction="handleMoreAction" bind:switchtab="onSwitchTab" curTabName="{{curTabName}}" tabs="{{topics}}" wx:if="{{isSwiperAb}}"></discover-swiper>
+        <view style="position: relative; height: {{swiperHight}}" wx:else>
+            <follow bind:handleMoreAction="handleMoreAction" bind:switchtab="onSwitchTab" wx:if="{{curTabName===TOPIC_NAMES.FOLLOW}}"></follow>
+            <recommend wx:elif="{{curTabName===TOPIC_NAMES.RECOMMEND}}"></recommend>
+            <nice wx:elif="{{curTabName===TOPIC_NAMES.NICE}}"></nice>
+            <bless-topic isSwiperAb="{{false}}" topic="{{getTopic(topics,curTabName)}}" topics="{{topics}}" wx:elif="{{curTabName===TOPIC_NAMES.BLESS}}"></bless-topic>
+            <block wx:else>
+                <topic bind:switchtab="onSwitchTab" curTabName="{{curTabName}}" topic="{{getTopic(topics,curTabName)}}" wx:if="{{switchIndex%2===1}}"></topic>
+                <topic bind:switchtab="onSwitchTab" curTabName="{{curTabName}}" topic="{{getTopic(topics,curTabName)}}" wx:else></topic>
+            </block>
+        </view>
+    </view>
+</form-id-collector>
+<comment-list bind:onHide="handleCommentListHide" bind:onShow="handleCommentListShow" dynamic="{{dynamic}}" dynamicComment="{{dynamicComment}}" show="{{isShowCommentList}}" wx:if="{{!commentListBan}}"></comment-list>
+<dynamic-comment-input isCommentList="{{isCommentList}}" isMaskTransparent="{{isShowCommentList}}"></dynamic-comment-input>
+<share-action-sheet></share-action-sheet>
+<xng></xng>
+<customer-service-entry></customer-service-entry>
+<global-components></global-components>
+<wxs module="imgRoot" src="../../../common/wxs/imgRoot.wxs" />
+<wxs module="utils" src="../../../common/wxs/utils.wxs" />
+<wxs module="getTopic">
+module.exports = function getTopic(topics, curTabName) {
+    var length = topics.length;
+    for (var i = 0; i < length; i++) {
+        var topic = topics[((nt_0 = (i), null == nt_0 ? undefined : 'number' === typeof nt_0 ? nt_0 : "" + nt_0))];
+        if (topic.name === curTabName) {
+            return (topic)
+        }
+    }
+};
+</wxs>

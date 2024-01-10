@@ -1,0 +1,48 @@
+.start-view-wrap {
+    overflow-y: auto;
+}
+
+.split-blank {
+    height: 20px;
+}
+
+.sort-list-wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 15px;
+}
+
+.tpl-sort-con {
+    margin: 11px 0;
+    padding: 9px;
+    box-sizing: border-box;
+    width: 330rpx;
+    height: 180rpx;
+    font-family: PingFangSC-Semibold;
+    font-weight: bold;
+    color: #ffffff;
+    position: relative;
+    border-radius: 4px;
+}
+
+.tpl-sort-title {
+    font-size: 24px;
+    line-height: 33px;
+    position: relative;
+}
+
+.tpl-sort-tip {
+    font-size: 15px;
+    line-height: 21px;
+    position: relative;
+}
+
+.tpl-sort-img {
+    width: 330rpx;
+    height: 180rpx;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 4px;
+}

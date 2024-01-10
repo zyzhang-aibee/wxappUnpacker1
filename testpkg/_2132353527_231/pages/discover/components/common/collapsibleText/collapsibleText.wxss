@@ -1,0 +1,44 @@
+.container {
+    position: relative;
+}
+
+.wrapper {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    text-overflow: ellipsis;
+}
+
+.foldedWrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.foldedWrapper:after {
+    content: "...";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    background: linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,1) 30%);
+    font-size: 15px;
+}
+
+.content {
+    word-break: break-all;
+}
+
+.collapse-btn {
+    display: flex;
+    position: absolute;
+    bottom: 1px;
+    right: 0px;
+}
+
+.collapse-btn-text {
+    line-height: 20px;
+    font-size: 14px;
+    color: #25ACFF;
+}

@@ -1,0 +1,27 @@
+{
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "dark",
+    "navigationBarTitleText": "小年糕+",
+    "onReachBottomDistance": 300,
+    "disableScroll": true,
+    "usingComponents": {
+        "form-id-collector": "/frameBase/Component/formIdCollector/formIdCollector",
+        "discover-swiper": "../components/swiper/swiper",
+        "tab-bar": "../components/tab-bar/tab-bar",
+        "follow": "../components/follow/follow",
+        "recommend": "../components/recommend/recommend",
+        "nice": "../components/nice/nice",
+        "bless-topic": "../components/bless/bless",
+        "topic": "../components/topic/topic",
+        "share-action-sheet": "/pages/discover/components/common/shareActionSheet/shareActionSheet",
+        "publish-menu": "/pages/discover/components/common/publishMenu/publishMenu",
+        "dynamic-comment-input": "/pages/discover/components/feed/dynamicCommentInput/dynamicCommentInput",
+        "comment-list": "/pages/discover/components/feed/comment/comment/comment",
+        "customer-service-entry": "/pages/discover/components/common/customer-service-entry/customer-service-entry",
+        "custom-navigation-bar": "/frameBase/Component/CustomNavigationBar/CustomNavigationBar/",
+        "xng": "/frameBase/components/xng/xng",
+        "user-info-authorizer": "/frameBase/components/user-info-authorizer/user-info-authorizer",
+        "global-components": "/common/components/global-components/global-components",
+        "xng-nav-bar": "/frameBase/Component/XngNavBar/XngNavBar/"
+    }
+}

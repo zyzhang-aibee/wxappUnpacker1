@@ -1,0 +1,17 @@
+<pull-down-refresh bind:loadMore="loadMore" bind:onRefresh="onPullDownRefresh" curTabName="{{TOPIC_NAMES.BLESS}}" refreshing="{{refreshing}}">
+    <bless-tags bind:checkTag="checkTag" tag="{{tag}}" tags="{{tags}}" wx:if="{{!loading}}"></bless-tags>
+    <bless-feed list="{{feedList}}" topic="{{getTopic(info,tag)}}"></bless-feed>
+    <loading-more bind:reload="loadMore" hasNext="{{feed.hasNext}}" isFetching="{{feed.isFetching}}" wx:if="{{feed.ids.length}}"></loading-more>
+</pull-down-refresh>
+<publish-menu title="投稿" wx:if="{{publishable}}"></publish-menu>
+<wxs module="getTopic">
+module.exports = function getTopic(info, tag) {
+    if (info && tag) {
+        return (({
+            id: info.id,
+            tag_id: tag.id,
+        }))
+    };
+    return (null)
+};
+</wxs>

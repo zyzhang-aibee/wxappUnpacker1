@@ -1,0 +1,20 @@
+<view class="frender-video-container" style="{{videoContainerSize}}{{pause?'width: 0; height: 0;':''}}">
+    <video autoplay bindended="onVideoEnd" bindplay="onVideoPlay" class="video-front-render" controls="{{videoControl}}" customCache="{{false}}" enableProgressGesture="{{false}}" id="frenderVideo" loop="{{need_loop}}" showFullscreenBtn="{{false}}" src="{{video_url}}" style="{{videoSize}}">
+        <cover-image class="header-img-container" src="{{header_url}}" style="width: {{width/7.35}}{{unit}}; height: {{width/7.35}}{{unit}}; {{pause?'width: 0; height: 0;':''}}" wx:if="{{onPlay&&avatarPosition==='leftTop'}}"></cover-image>
+        <cover-view class="user-name" style="font-size: {{width/17.8}}{{unit}}; width: {{width/1.8}}{{unit}}; {{pause?'width: 0; height: 0;':''}}; color: {{fontColor?fontColor:'#fff'}}" wx:if="{{onPlay&&avatarPosition==='leftTop'}}">
+      {{user_name}}
+    </cover-view>
+        <cover-view class="user-send-word" style="font-size: {{width/22}}{{unit}};margin-top: {{width/14}}{{unit}}; {{pause?'width: 0; height: 0;':''}}; color: {{fontColor?fontColor:'#fff'}}" wx:if="{{onPlay&&avatarPosition==='leftTop'}}">
+      送给你
+    </cover-view>
+        <cover-image class="header-img-container-middle" src="{{header_url}}" style="width: {{width/4}}{{unit}}; height: {{width/4}}{{unit}}; {{pause?'width: 0; height: 0;':''}}" wx:if="{{onPlay&&avatarPosition==='middle'}}"></cover-image>
+        <cover-view class="user-name-middle" style="font-size: {{width/11}}{{unit}}; width: {{width/1.7}}{{unit}}; {{pause?'width: 0; height: 0;':''}}; color: {{fontColor?fontColor:'#fff'}}" wx:if="{{onPlay&&avatarPosition==='middle'}}">
+      {{user_name}}
+    </cover-view>
+        <cover-image class="header-pendant" src="{{pendant_url}}" style="width: {{width/7.04}}{{unit}}; height: {{width/11.76}}{{unit}}; {{pause?'width: 0; height: 0;':''}}" wx:if="{{onPlay&&hasPendant}}"></cover-image>
+        <cover-view class="swipe-up-guide" wx:if="{{showSwiper}}">
+            <cover-image class="swiper-up-guide-icon" src="https://static2.xiaoniangao.cn/mini_app/img/discover/arrow_double.png"></cover-image>
+            <cover-view class="swiper-up-guide-text">上滑查看更多</cover-view>
+        </cover-view>
+    </video>
+</view>

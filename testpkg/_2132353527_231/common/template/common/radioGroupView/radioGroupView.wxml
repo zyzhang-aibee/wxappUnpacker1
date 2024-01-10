@@ -1,0 +1,11 @@
+<template name="radio-group-view">
+    <view class="radio-group-view">
+        <view bindtap="{{radioGroupData.tap}}" class="radio-item {{radioGroupData.currentIndex===index?'selected-item':''}}" data-index="{{index}}" wx:for="{{radioGroupData.items}}" wx:key="{{index}}">
+            <view class="radio-item-con">
+                <image lazyLoad class="item-left-image" src="{{item.leftIconSrc}}" wx:if="{{item.leftIconSrc}}"></image>
+                <text class="item-text {{radioGroupData.currentIndex===index?'selected-text':''}}" wx:if="{{item.text}}">{{item.text}}</text>
+                <image lazyLoad class="item-right-image" src="{{item.rightIconSrc}}" wx:if="{{item.rightIconSrc}}"></image>
+            </view>
+        </view>
+    </view>
+</template>

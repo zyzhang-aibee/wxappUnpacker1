@@ -1,0 +1,76 @@
+var ONE_MINUTE = 60 * 1000;
+var ONE_HOUR = 60 * ONE_MINUTE;
+var ONE_DAY = 24 * ONE_HOUR;
+var ONE_YEAR = 365 * ONE_DAY;
+
+function repeat(str, times, maxlLen) {
+    var result = '';
+    if (!str || times < 1) {
+        return (result)
+    };
+    for (var i = 0; i < times; i++) {
+        result += str
+    };
+    if (maxlLen && maxlLen < result.length) {
+        return (result.slice(0, maxlLen))
+    };
+    return (result)
+};
+
+function padStart(str, len, chars) {
+    chars = undefined === chars ? ' ' : chars;
+    str = str + '';
+    var strLen = len ? str.length : 0;
+    if (strLen >= len) {
+        return (str)
+    };
+    chars = chars + '';
+    var charsLen = chars.length;
+    var paddingLen = len - strLen;
+    var padding = repeat(chars, Math.ceil(paddingLen / charsLen), paddingLen);
+    return (padding + str)
+};
+
+function formatDuration(duration) {
+    if (!duration) {
+        return ('00 : 00')
+    };
+    var du = Math.floor(duration / 1000);
+    var minutes = Math.floor(du / 60);
+    var seconds = du % 60;
+    return (padStart(minutes, 2, 0) + ' : ' + padStart(seconds, 2, 0))
+};
+
+function limitCount(count, limit) {
+    limit = limit || 100000;
+    if (count <= limit) {
+        return (count)
+    };
+    return (limit + '+')
+};
+
+function limitCountToWan(count) {
+    if (count < 10000) {
+        return (count)
+    };
+    if (count > 100000) {
+        return (10 + '万+')
+    };
+    return (Math.floor(count / 10000) + '万+')
+};
+
+function isBlessVideo(tpl_id) {
+    tpl_id += '';
+    if (tpl_id.slice(0, 3) === '400') {
+        return (true)
+    };
+    return (false)
+};
+module.exports = ({
+    repeat: repeat,
+    padStart: padStart,
+    formatDuration: formatDuration,
+    limitCount: limitCount,
+    limitCountToWan: limitCountToWan,
+    isBlessVideo: isBlessVideo,
+});

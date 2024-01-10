@@ -1,0 +1,21 @@
+<custom-navigation-bar customNavigationBarData="{{customNavigationBarData}}"></custom-navigation-bar>
+<user-info-auth-view show="{{utils.isUndefined(userinfo.has_auth)?false:!userinfo.has_auth}}"></user-info-auth-view>
+<view class="profile_container-con" style="top: {{userinfo.has_auth?'0':'64px'}}; font-size: {{fontSizeScale*(fontSizeAB?11:10)}}px;">
+    <scroll-view scrollY bindscrolltolower="onScrollToLower" style="height:calc(100vh - {{userinfo.has_auth?totalTopHeight:totalTopHeight+64}}px)">
+        <header-info userInfo="{{userinfo}}"></header-info>
+        <menu class="menu" config="{{menuConfig}}"></menu>
+        <tab-bar activeKey="{{curTab}}" bind:onChange="onSwitchTab" class="tab" userInfo="{{userinfo}}"></tab-bar>
+        <dynamic bind:onAlbumTap="onAlbumTap" bind:onDynamicMoreTap="handleMoreAction" dynamic="{{dynamic}}" userinfo="{{userinfo}}" wx:if="{{curTab==='dynamic'&&!dynamic.order&&dynamic.ban!==ALBUM_TYPE_BAN.RED&&dynamic.ban!==ALBUM_TYPE_BAN.YELLOW}}" wx:for="{{dynamics.list}}" wx:for-item="dynamic" wx:key="{{dynamic.id}}"></dynamic>
+        <album album="{{product}}" bind:onAlbumMoreTap="handleMoreAction" bind:onAlbumTap="onAlbumTap" isUserSelf="true" wx:if="{{curTab==='product'&&!product.order&&product.ban!==ALBUM_TYPE_BAN.RED&&product.ban!==ALBUM_TYPE_BAN.YELLOW}}" wx:for="{{products.list}}" wx:for-item="product" wx:key="{{product.id}}"></album>
+        <view class="loading" wx:if="{{hasNext}}">正在加载...</view>
+        <view class="no-public-tip" wx:if="{{!hasNext&&!isFetching&&noProfileData}}">作者没有公开的内容</view>
+        <view class="loaded-all" wx:if="{{!hasNext&&!isFetching&&!noProfileData}}">已显示全部内容</view>
+        <view class="bottom_space"></view>
+    </scroll-view>
+</view>
+<view class="tool-tip-con" id="tabBarLine" style="bottom: {{isiOS?50:0}}px;"></view>
+<qr-code-poster albumPosterData="{{albumPosterData}}"></qr-code-poster>
+<xng></xng>
+<global-components></global-components>
+<wxs module="imgRoot" src="../../common/wxs/imgRoot.wxs" />
+<wxs module="utils" src="../../common/wxs/utils.wxs" />

@@ -1,0 +1,19 @@
+<drawer bind:onHide="onHide" bind:onShow="onShow" show="{{show}}">
+    <view class="content-container" wx:if="{{!night}}">
+        <text class="tip">影集正在审核中，如有疑问请联系客服！</text>
+        <button bindtap="onContactTap" class="contact-container contact-day" openType="contact">
+            <image class="icon" src="{{imgRoot}}/me/my_contact.png"></image>
+            <text class="contact-text">联系客服</text>
+        </button>
+    </view>
+    <view class="content-container-night" wx:else>
+        <text class="tip">影集正在审核中，
+现在为非工作时间，您可以给客服留言</text>
+        <view class="work-time">工作时间为：8:00-24:00</view>
+        <button bindtap="onContactTap" class="contact-container contact-night" openType="contact">
+            <image class="icon-night" src="{{imgRoot}}/me/moon.png"></image>
+            <text class="contact-text">给客服留言</text>
+        </button>
+    </view>
+</drawer>
+<wxs module="imgRoot" src="../../../../../common/wxs/imgRoot.wxs" />

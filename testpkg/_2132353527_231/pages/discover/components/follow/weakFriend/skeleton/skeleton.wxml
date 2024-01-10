@@ -1,0 +1,5 @@
+<view class="container">
+    <view class="header">可能感兴趣的人</view>
+    <image lazyLoad class="swiper" src="{{imgRoot}}/skeleton.gif"></image>
+</view>
+<wxs module="imgRoot" src="../../../../../../common/wxs/imgRoot.wxs" />

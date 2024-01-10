@@ -1,0 +1,10 @@
+<pull-down-refresh bind:loadMore="loadMore" bind:onRefresh="onPullDownRefresh" curTabName="{{TOPIC_NAMES.NICE}}" refreshing="{{refreshing}}">
+    <view style="padding-top: 100rpx;" wx:if="{{!niceAlbum.groupIds.length}}">
+        <loading-block></loading-block>
+    </view>
+    <block wx:else>
+        <album-swiper banners="{{niceAlbum.banners}}" bind:swiperItemTap="onAlbumTap" wx:if="{{niceAlbum.banners.length}}"></album-swiper>
+        <group-list albums="{{dynamics}}" bind:albumTap="onAlbumTap" groupIds="{{niceAlbum.groupIds}}"></group-list>
+        <loading-more bind:reload="onReachBottom" hasNext="{{niceAlbum.hasNext}}" isFetching="{{niceAlbum.isFetching}}"></loading-more>
+    </block>
+</pull-down-refresh>

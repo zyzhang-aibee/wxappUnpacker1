@@ -1,0 +1,47 @@
+<view class="container">
+    <view class="temp">
+        <view class="avatar-container">
+            <image lazyLoad class="avatar" src="{{userinfo.hurl}}"></image>
+        </view>
+        <view class="content">
+            <view class="header">
+                <view class="title">
+                    <text class="nick">{{userinfo.nick}}</text>{{!isComment?'发布':'评论'}}了{{dynamic.album_type===commonConst.ALBUM_TYPE.ARTICLE?'图文':'影集'}}
+        </view>
+                <image lazyLoad bindtap="onMoreTap" class="more-icon" src="{{imgRoot}}/more-action-icon.png"></image>
+            </view>
+            <view class="body">
+                <view class="comment" wx:if="{{isComment}}">{{dynamic.txt}}</view>
+                <view bindtap="onAlbumTap" class="album-container" data-album="{{dynamic}}" data-trendclass="{{isComment?'comment':'publish'}}">
+                    <view class="album-cover-container">
+                        <image lazyLoad class="album-cover {{isComment?'comment-album-cover':''}}" src="{{dynamic.url}}"></image>
+                        <view class="article-flag" wx:if="{{dynamic.album_type===commonConst.ALBUM_TYPE.ARTICLE}}">图文</view>
+                    </view>
+                    <view class="album-title over-flow-ellipsis">
+                        <view class="over-flow-ellipsis tow-lines">{{dynamic.title}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="footer">
+                <view class="footer-date">{{moment.format(dynamic.t,'YY.MM.DD')}}</view>
+                <view class="footer-views-favor" wx:if="{{!viewCountBan&&!favorCountBan}}">
+                    <view class="view-container" wx:if="{{!isComment}}">
+                        <image class="view-icon" src="{{imgRoot}}/play/album-views-icon.png"></image>
+                        <text>{{dynamic.views>100000?'100000+':dynamic.views}}</text>
+                    </view>
+                    <view bindtap="onFavorTap" class="favor-container" wx:if="{{isComment}}">
+                        <view class="favor_icon {{dynamic.comment_favor.has_favor?'favor_icon_favored':''}}"></view>
+                        <text>{{dynamic.favor.total>100000?'100000+':dynamic.comment_favor.total}}</text>
+                    </view>
+                    <view bindtap="onFavorTap" class="favor-container" wx:else>
+                        <view class="favor_icon {{dynamic.favor.has_favor?'favor_icon_favored':''}}"></view>
+                        <text>{{dynamic.favor.total>100000?'100000+':dynamic.favor.total}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<wxs module="moment" src="../../../../common/wxs/moment.wxs" />
+<wxs module="commonConst" src="../../../../common/wxs/common.wxs" />
+<wxs module="imgRoot" src="../../../../common/wxs/imgRoot.wxs" />

@@ -1,0 +1,11 @@
+<view class="container">
+    <slot name="before"></slot>
+    <block wx:if="{{lastTime===-1}}">
+        <comment-skeleton></comment-skeleton>
+        <comment-skeleton></comment-skeleton>
+        <comment-skeleton></comment-skeleton>
+    </block>
+    <comment-box comment="{{comment}}" dynamic="{{dynamic}}" wx:for="{{listWxs.mapList(commentIds,commentEntities)}}" wx:for-item="comment" wx:key="{{comment.id}}"></comment-box>
+    <loading-footer hasNext="{{!!lastTime}}"></loading-footer>
+</view>
+<wxs module="listWxs" src="../../../../../../common/wxs/discover/list.wxs" />

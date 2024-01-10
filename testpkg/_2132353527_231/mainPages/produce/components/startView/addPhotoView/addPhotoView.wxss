@@ -1,0 +1,90 @@
+.guide-view .add-photos-wrap,.add-photos-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    height: 160px;
+    margin: 0 15px 0;
+}
+
+.guide-view .add-photo-icon-text,.add-photo-icon-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+}
+
+.guide-view .add-photo-icon-wrap,.add-photo-icon-wrap {
+    width: 44px;
+    height: 44px;
+}
+
+.guide-view .add-photo-icon,.add-photo-icon {
+    width: 44px;
+    height: 44px;
+}
+
+.guide-view .add-photo-text,.add-photo-text {
+    padding-top: 5px;
+    line-height: 35px;
+    font-weight: bold;
+    color: #624646;
+    font-size: 1.8em;
+}
+
+.new-user-mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.background-anim {
+    background-color: #feefec;
+}
+
+@-webkit-keyframes background {
+    0% {
+        background-color: #fef8ec;
+    }
+
+    50% {
+        background-color: #feefec;
+    }
+
+    100% {
+        background-color: #fef8ec;
+    }
+}
+
+@keyframes background {
+    0% {
+        background-color: #fef8ec;
+    }
+
+    50% {
+        background-color: #feefec;
+    }
+
+    100% {
+        background-color: #fef8ec;
+    }
+}
+
+.close-img-con {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.close-img {
+    width: 35px;
+    height: 35px;
+}

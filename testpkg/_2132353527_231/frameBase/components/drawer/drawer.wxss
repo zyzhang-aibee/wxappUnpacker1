@@ -1,0 +1,46 @@
+.drawer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    z-index: 99999;
+}
+
+.drawer-open {
+    height: 100%;
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.drawer-open .mask {
+    animation: fadeIn .3s forwards;
+}
+
+.content-wrapper {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(100%);
+    transition: transform .3s;
+    transition: transform .3s,-webkit-transform .3s;
+    background-color: #fff;
+}
+
+.drawer-open .content-wrapper {
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+    transform: none;
+}
+
+.cancel-btn {
+    color: #666;
+    font-size: 36rpx;
+    line-height: 50rpx;
+    padding: 24rpx 0 28rpx;
+    text-align: center;
+    background-color: #F8F8F8;
+}

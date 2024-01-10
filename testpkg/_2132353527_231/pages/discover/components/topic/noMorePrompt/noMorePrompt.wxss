@@ -1,0 +1,35 @@
+.no-more-prompt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding-top: 370rpx;
+}
+
+.small-padding {
+    margin-top: 16rpx;
+    padding: 185rpx 0;
+}
+
+.prompt-content {
+    font-size: 32rpx;
+    font-weight: 500;
+    color: rgba(162,162,162,1);
+    line-height: 45rpx;
+    text-align: center;
+    padding-bottom: 9rpx;
+}
+
+.prompt-go-recommend {
+    width: 184rpx;
+    height: 66rpx;
+    background: rgba(255,32,100,1);
+    border-radius: 33rpx;
+    padding: 12rpx 47rpx;
+    font-size: 30rpx;
+    color: #ffffff;
+    line-height: 42rpx;
+    box-sizing: border-box;
+    margin-top: 45rpx;
+}

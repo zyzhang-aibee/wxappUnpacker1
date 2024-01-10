@@ -1,0 +1,47 @@
+<template name="xng-action-sheet">
+    <view catchtap="{{actionSheet.onCancel}}" class="back-mask"></view>
+    <view class="action-sheet {{actionSheet.hidden?'action-sheet-fade-out':'action-sheet-fade-in'}} ">
+        <view class="action-sheet-menu" style="{{actionSheet.type==2?'padding-bottom: 15px;':''}}">
+            <view class="action-sheet-tip-cell" wx:if="{{actionSheet.tip}}">{{actionSheet.tip}}</view>
+            <view class="action-sheet-icons-cell" wx:if="{{actionSheet.type==1}}">
+                <view class="{{idx==actionSheet.buttons.length-1?'action-sheet-icon-last-cell':'action-sheet-icon-cell'}}" wx:for="{{actionSheet.buttons}}" wx:for-index="idx" wx:for-item="button" wx:key="name">
+                    <button catchtap="{{buttonChild.onTap}}" class="action-sheet-button-cell" data-disable="{{buttonChild.disable}}" openType="{{buttonChild.openType?buttonChild.openType:''}}" wx:for="{{button}}" wx:for-index="idx" wx:for-item="buttonChild" wx:key="name">
+                        <view class="action-sheet-button-view">
+                            <view class="action-sheet-icon">
+                                <image lazyLoad class="action-sheet-icon-image" src="{{buttonChild.src}}"></image>
+                            </view>
+                            <view class="action-sheet-icon-text">
+                                <text>{{buttonChild.name}}</text>
+                            </view>
+                        </view>
+                    </button>
+                </view>
+            </view>
+            <view class="type-two-cell clearfloat" wx:if="{{actionSheet.type==2}}">
+                <view catchtap="{{button.onTap}}" class="type-two-item" data-disable="{{button.disable}}" wx:for="{{actionSheet.buttons}}" wx:for-index="idx" wx:for-item="button" wx:key="name">
+                    <image lazyLoad class="type-two-image" src="{{button.src}}"></image>
+                    <text class="type-two-name">{{button.name}}</text>
+                </view>
+            </view>
+            <view wx:if="{{actionSheet.type==3}}">
+                <view catchtap="{{button.onTap}}" class="action-sheet-cell" data-disable="{{button.disable}}" wx:for="{{actionSheet.buttons}}" wx:for-index="idx" wx:for-item="button" wx:key="name">
+                    <view class="chat-checkbox-container">
+                        <checkbox-group bindchange="bindCheckboxChange">
+                            <label>
+                                <text>{{button.name}}</text>
+                                <checkbox checked="{{button.isChecked}}" class="chat-checkbox" color="#000000" disabled="{{button.disable}}" value="show"></checkbox>
+                            </label>
+                        </checkbox-group>
+                    </view>
+                </view>
+            </view>
+            <view catchtap="{{button.onTap}}" class="action-sheet-cell {{button.subName?'action-sheet-cell_sub':''}} {{button.warning?'warning-btn':''}} {{button.primary?'primary-btn':''}} {{button.disable?'disable-btn':''}} {{button.default?'default-btn':''}} {{idx>0}}" data-disable="{{button.disable}}" style="display:{{actionSheet.type?'none':''}}" wx:for="{{actionSheet.buttons}}" wx:for-index="idx" wx:for-item="button" wx:key="name">
+                <view>{{button.name}}</view>
+                <view class="sub-name" wx:if="{{button.subName}}">{{button.subName}}</view>
+            </view>
+        </view>
+        <view class="action-sheet-action" style="{{actionSheet.type==2?'margin-top: 0;':''}}">
+            <view catchtap="{{actionSheet.onCancel}}" class="action-sheet-cell" style="{{actionSheet.type==2?'background: #f8f8f8;color: #666666':'color: #000;'}}">取消</view>
+        </view>
+    </view>
+</template>

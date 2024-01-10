@@ -1,0 +1,9 @@
+<block wx:for="{{groupIds}}" wx:for-item="groupId" wx:key="{{groupId}}">
+    <view class="list" wx:if="{{groupId.ids&&groupId.ids.length}}">
+        <view class="date">{{moment.formatUnixTime(groupId.dl_t)}}</view>
+        <album-card-item bind:itemTap="onAlbumItemTap" item="{{item}}" wx:for="{{listWxs.mapList(groupId.ids,albums)}}" wx:key="{{item.id}}"></album-card-item>
+    </view>
+    <view class="divider" wx:if="{{groupId.ids}}"></view>
+</block>
+<wxs module="listWxs" src="../../../../../common/wxs/discover/list.wxs" />
+<wxs module="moment" src="../../../../../common/wxs/moment.wxs" />

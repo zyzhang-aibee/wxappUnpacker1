@@ -1,0 +1,1 @@
+<canvas-to-image bind:draw="canvasDraw" bind:success="canvasSuccess" height="{{height}}" images="{{[coverUrl]}}" width="{{width}}" wx:if="{{coverUrl&&dynamic.views}}"></canvas-to-image>

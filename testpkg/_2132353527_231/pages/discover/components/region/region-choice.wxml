@@ -1,0 +1,5 @@
+<view bind:tap="onRegionChoice" class="region-choice">
+    <view class="region-choice-content">点击选择其他城市</view>
+    <image class="region-choice-icon" src="{{imgRoot}}/topic/location.png"></image>
+</view>
+<wxs module="imgRoot" src="../../../../common/wxs/imgRoot.wxs" />

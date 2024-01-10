@@ -1,0 +1,28 @@
+<swiper bindanimationfinish="handleAnimationFinish" bindchange="handleChange" class="swiper" current="{{current}}" style="height: {{swiperHight}}">
+    <swiper-item class="{{tab.name===TOPIC_NAMES.RECOMMEND&&showGuide?'overflow-visible':''}}" wx:for="{{tabs}}" wx:for-item="tab" wx:key="{{tab.name}}">
+        <block wx:if="{{shouldRender(index,current)&&loadedTab[tab.name]}}">
+            <follow bind:handleMoreAction="handleMoreAction" bind:switchtab="onSwitchTab" curTabName="{{curTabName}}" wx:if="{{tab.name===TOPIC_NAMES.FOLLOW}}"></follow>
+            <swiper-guide show="{{showGuide}}" wx:elif="{{tab.name===TOPIC_NAMES.RECOMMEND}}">
+                <recommend curTabName="{{curTabName}}"></recommend>
+            </swiper-guide>
+            <nice curTabName="{{curTabName}}" wx:elif="{{tab.name===TOPIC_NAMES.NICE}}"></nice>
+            <bless-topic isSwiperAb curTabName="{{curTabName}}" wx:elif="{{tab.name===TOPIC_NAMES.BLESS}}"></bless-topic>
+            <topic isSwiperAb bind:switchtab="onSwitchTab" curTabName="{{tab.name}}" topic="{{tab}}" wx:else></topic>
+        </block>
+    </swiper-item>
+</swiper>
+<wxs module="shouldRender">
+module.exports = (function(index, current) {
+    return (Math.abs(index - current) <= 1)
+});
+</wxs>
+<wxs module="getFeed">
+module.exports = (function(index, current, leftFeed, curFeed, rightFeed) {
+    if (index < current) {
+        return (leftFeed)
+    } else if (index > current) {
+        return (rightFeed)
+    };
+    return (curFeed)
+});
+</wxs>

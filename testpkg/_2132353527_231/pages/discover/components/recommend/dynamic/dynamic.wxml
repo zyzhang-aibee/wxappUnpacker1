@@ -1,0 +1,7 @@
+<view class="dynamic" data-tag="{{topic.title}}" id="CTR">
+    <view bindtap="goDynamicSharePage">
+        <album dynamic="{{dynamic}}"></album>
+    </view>
+    <bottomBtns bind:goProfilePage="goProfilePage" bind:handleShare="handleShare" dynamic="{{dynamic}}" topic="{{topic}}"></bottomBtns>
+</view>
+<wxs module="utils" src="../../../../../common/wxs/utils.wxs" />

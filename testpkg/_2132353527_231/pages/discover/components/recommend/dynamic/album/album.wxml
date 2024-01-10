@@ -1,0 +1,19 @@
+<view class="album">
+    <image lazyLoad class="bg-image" mode="aspectFill" src="{{dynamic.url}}"></image>
+    <view class="mask"></view>
+    <view class="title-container">
+        <view class="title-container-bg">
+            <view class="{{dynamic.title?'title':''}}">
+        {{dynamic.title}}
+      </view>
+        </view>
+    </view>
+    <image lazyLoad class="play" src="{{imgRoot}}/discover/cover_play_v2.png" wx:if="{{dynamic.album_type!==2}}"></image>
+    <view class="bottom">
+        <view class="views" wx:if="{{dynamic.views}}">{{utils.limitCount(dynamic.views)}}人{{dynamic.album_type===ALBUM_TYPE.ARTICLE?'阅读':'播放'}}</view>
+        <view class="article-flag" wx:if="{{dynamic.album_type===ALBUM_TYPE.ARTICLE}}">图文</view>
+        <view class="duration" wx:else>{{utils.formatDuration(dynamic.du)}}</view>
+    </view>
+</view>
+<wxs module="imgRoot" src="../../../../../../common/wxs/imgRoot.wxs" />
+<wxs module="utils" src="../../../../../../common/wxs/discover/utils.wxs" />

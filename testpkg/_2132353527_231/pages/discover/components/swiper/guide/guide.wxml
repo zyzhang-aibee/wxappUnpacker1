@@ -1,0 +1,8 @@
+<view class="container {{shouldGuide&&show?'should-guide':''}}">
+    <slot></slot>
+    <view class="guide" wx:if="{{shouldGuide&&show}}">
+        <view class="arrow-left"></view>
+        <view class="guide-text">左右滑动以切换版块</view>
+        <view class="arrow-left"></view>
+    </view>
+</view>

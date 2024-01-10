@@ -1,0 +1,76 @@
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 54rpx 0 40rpx;
+}
+
+.tip {
+    font-size: 34rpx;
+    line-height: 48rpx;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+.work-time {
+    margin: 14rpx 0 26rpx;
+    padding: 0 20rpx;
+    color: #FF2064;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    font-weight: 500;
+    border-radius: 20rpx;
+    background-color: rgba(255,38,104,.05);
+}
+
+.contact-container {
+    display: inline-flex;
+    align-items: center;
+    background-color: #F5F5F5;
+    border-radius: 50rpx;
+}
+
+.contact-day {
+    margin-top: 40rpx;
+    padding: 12rpx 40rpx 6rpx;
+}
+
+.icon {
+    width: 80rpx;
+    height: 86rpx;
+    margin-right: 10rpx;
+}
+
+.contact-text {
+    font-size: 34rpx;
+    line-height: 48rpx;
+    color: #333;
+    font-weight: 500;
+}
+
+.cancel-btn {
+    color: #666;
+    font-size: 36rpx;
+    line-height: 50rpx;
+    padding: 24rpx 0 28rpx;
+    text-align: center;
+    background-color: #F8F8F8;
+}
+
+.content-container-night {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 28rpx 0 30rpx;
+}
+
+.contact-night {
+    padding: 18rpx 52rpx 16rpx 60rpx;
+}
+
+.icon-night {
+    width: 56rpx;
+    height: 56rpx;
+    margin-right: 26rpx;
+}

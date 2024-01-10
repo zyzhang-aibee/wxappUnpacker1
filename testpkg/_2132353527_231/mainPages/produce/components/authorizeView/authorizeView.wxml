@@ -1,0 +1,6 @@
+<view class="permission-con" wx:if="{{!authorizeData.hidden}}">
+    <view class="album-permission">
+        <view class="album-permission-text">您还没有开启授权，账户资料无法同步到小年糕公众号</view>
+        <button bindgetuserinfo="onPermissionTap" class="album-permission-btn" openType="getUserInfo">授权</button>
+    </view>
+</view>

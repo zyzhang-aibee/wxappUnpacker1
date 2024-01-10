@@ -1,0 +1,19 @@
+<view class="xng-nav-bar {{navBar.theme==='black'?'xng-nav-bar-black':''}} {{navBar.theme==='transparent'?'xng-nav-bar-transparent':''}}" style="top:{{totalTopHeight}}px;">
+    <view class="mid">
+        <text class="mid-text" wx:if="{{navBar.mid&&navBar.mid.text}}">{{navBar.mid.text}}</text>
+        <text class="small-text" wx:if="{{navBar.mid&&navBar.mid.smallText}}">{{navBar.mid.smallText}}</text>
+    </view>
+    <view bindtap="onNavBarRightTap" class="right" wx:if="{{navBar.right}}">
+        <image lazyLoad class="right-image" src="{{navBar.right.src}}" wx:if="{{navBar.right&&navBar.right.src}}"></image>
+        <image lazyLoad class="right-image" src="https://static2.xiaoniangao.cn/mini_app/img/me/recycle.png" wx:elif="{{navBar.right.type==='recently'}}"></image>
+        <image lazyLoad class="right-image-big" src="https://static2.xiaoniangao.cn/mini_app/img/home_icon.png" wx:elif="{{navBar.right.type==='home'}}"></image>
+        <text class="right-text" wx:if="{{navBar.right&&navBar.right.text}}">{{navBar.right.text}}</text>
+        <text class="right-btn right-red-text" wx:elif="{{navBar.right&&navBar.right.redText}}">{{navBar.right.redText}}</text>
+        <text class="right-gray-text" wx:elif="{{navBar.right&&navBar.right.grayText}}">{{navBar.right.grayText}}</text>
+        <text class="right-btn right-gray-btn" wx:elif="{{navBar.right&&navBar.right.grayBtnText}}">{{navBar.right.grayBtnText}}</text>
+        <form bindsubmit="onFormIdTap" reportSubmit="true" wx:if="{{navBar.right.needFormId}}">
+            <button class="form-id-view" formType="submit"></button>
+        </form>
+    </view>
+</view>
+<view class="split-line" wx:if="{{!navBar.hideLine}}"></view>

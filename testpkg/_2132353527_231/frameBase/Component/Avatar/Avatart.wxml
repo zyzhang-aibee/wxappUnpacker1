@@ -1,0 +1,4 @@
+<view class="avatar">
+    <image lazyLoad catchtap="onAvatarTap" src="{{avaData.src}}" style="{{style}}"></image>
+    <image lazyLoad class="lb-icon" src="{{avaData.iconSrc}}" style="{{iconStyle}}" wx:if="{{avaData.iconSrc}}"></image>
+</view>

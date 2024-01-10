@@ -1,0 +1,18 @@
+<view class="list">
+    <block wx:if="{{!list.length}}">
+        <dynamic-skeleton></dynamic-skeleton>
+        <dynamic-skeleton></dynamic-skeleton>
+        <dynamic-skeleton></dynamic-skeleton>
+    </block>
+    <block wx:if="{{list.length}}" wx:for="{{list}}" wx:for-item="dynamic" wx:key="{{dynamic.id}}">
+        <view class="separator" wx:if="{{index!==0&&( dynamic!=='weakFriend'||dynamic==='weakFriend'&&isShowWeakFriend(weakFriends) )}}"></view>
+        <weak-friend weakFriends="{{weakFriends}}" wx:if="{{dynamic==='weakFriend'}}"></weak-friend>
+        <dynamic bind:handleMoreAction="handleMoreAction" bind:handleShare="handleShare" dynamic="{{dynamic}}" fastCommentEntryVisible="{{true}}" followedFriends="{{weakFriends.followedFriends}}" wx:elif="{{!dynamic.ban}}"></dynamic>
+    </block>
+</view>
+<wxs module="isShowWeakFriend">
+function isShowWeakFriend(weakFriends) {
+    return (weakFriends.isFirstFetch || weakFriends.mids.length)
+};
+module.exports = isShowWeakFriend;
+</wxs>

@@ -1,0 +1,7 @@
+<view class="box">
+    <view class="skeleton album"></view>
+    <view class="footer-bar">
+        <view class="skeleton avatar"></view>
+        <view class="skeleton nick"></view>
+    </view>
+</view>

@@ -1,0 +1,12 @@
+<view class="box">
+    <view class="header">
+        <view class="skeleton avatar"></view>
+        <view class="base-info">
+            <view class="skeleton nick"></view>
+        </view>
+    </view>
+    <view class="body">
+        <view class="skeleton comment"></view>
+        <view class="skeleton album-link"></view>
+    </view>
+</view>

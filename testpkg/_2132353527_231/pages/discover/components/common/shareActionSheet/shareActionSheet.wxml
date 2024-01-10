@@ -1,0 +1,17 @@
+<view class="action-sheet" wx:if="{{show}}">
+    <view catchtap="onFail" class="action-sheet-mask"></view>
+    <view catchtap="onSuccess" class="action-sheet-body fade-in">
+        <view class="actions">
+            <view bindtap="{{action.bindtap}}" class="action" data-dynamic="{{action.data}}" id="{{action.id||''}}" wx:for="{{actions}}" wx:for-item="action" wx:key="{{index}}">
+                <button showMessageCard class="action-btn" data-dynamic="{{action.data}}" openType="{{action.openType}}" wx:if="{{action.openType}}"></button>
+                <image lazyLoad class="action-icon" src="{{action.src}}"></image>
+                <view class="action-content">
+                    <view class="action-title">{{action.title}}</view>
+                    <view class="action-tip" wx:if="{{action.tip}}">{{action.tip}}</view>
+                </view>
+            </view>
+        </view>
+        <view catchtap="onFail" class="action-sheet-default">取消</view>
+    </view>
+</view>
+<wxs module="imgRoot" src="../../../../../common/wxs/imgRoot.wxs" />

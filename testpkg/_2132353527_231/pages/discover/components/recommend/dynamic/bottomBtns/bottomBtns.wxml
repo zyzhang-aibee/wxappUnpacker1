@@ -1,0 +1,28 @@
+<view class="bottomBtns">
+    <view bindtap="goProfilePage" class="author">
+        <image lazyLoad class="avatar" src="{{dynamic.hide_u||dynamic.user.mid===10000||!dynamic.user.nick?imgRoot+'/play/icon-anonymous.png':dynamic.user.hurl}}"></image>
+        <view class="nick" id="authorNick">{{dynamic.hide_u||dynamic.user.mid===10000||!dynamic.user.nick?'小年糕网友':dynamic.user.nick}}</view>
+    </view>
+    <view class="right">
+        <user-info-authorizer bind:onComplete="handleFavor" effective="{{needAuthFavor}}">
+            <view class="button">
+                <image lazyLoad class="icon" id="commerceFavor" src="{{dynamic.favor.has_favor?imgRoot+'/play/liked.png':imgRoot+'/play/like.png'}}"></image>
+                <view class="text">{{dynamic.favor.total&&utils.limitCountToWan(dynamic.favor.total)||'点赞'}}</view>
+            </view>
+        </user-info-authorizer>
+        <user-info-authorizer bind:onComplete="goDynamicSharePage" effective="{{needAuthComment}}" wx:if="{{dynamic.album_type!==ALBUM_TYPE.ARTICLE}}">
+            <view class="button" id="commerceComment">
+                <image lazyLoad class="icon" src="{{imgRoot}}/play/message.png"></image>
+                <view class="text">{{dynamic.comment_count&&utils.limitCountToWan(dynamic.comment_count)||'评论'}}</view>
+            </view>
+        </user-info-authorizer>
+        <user-info-authorizer effective="{{needAuthShare}}">
+            <button class="share-button" data-dynamic="{{dynamic}}" data-topic="{{topic}}" id="recommendShare" openType="share">
+                <image lazyLoad class="share-icon" src="{{imgRoot}}/discover/wxshare_white_small.png"></image>
+                <view class="share-text">分享</view>
+            </button>
+        </user-info-authorizer>
+    </view>
+</view>
+<wxs module="imgRoot" src="../../../../../../common/wxs/imgRoot.wxs" />
+<wxs module="utils" src="../../../../../../common/wxs/discover/utils.wxs" />

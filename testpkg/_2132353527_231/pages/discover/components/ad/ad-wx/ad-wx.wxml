@@ -1,0 +1,3 @@
+<view capture-bind:tap="onTap" class="{{show?'show-ad':'hide-ad'}}">
+    <ad binderror="onAdError" bindload="onAdLoad" class="ad wx-ad" data-cdate="{{cdate}}" data-lastclosedate="{{lastclosedate}}" data-m="{{index}}" data-n="{{screenIndex}}" data-type="{{0}}" unitId="adunit-fd935c02a76c137e"></ad>
+</view>

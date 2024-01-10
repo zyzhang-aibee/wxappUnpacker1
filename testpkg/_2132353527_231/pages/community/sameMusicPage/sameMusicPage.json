@@ -1,0 +1,12 @@
+{
+    "onReachBottomDistance": 8,
+    "usingComponents": {
+        "loading-footer": "/pages/discover/components/common/loadingFooter/loadingFooter",
+        "waterfall": "/pages/community/components/dynamicShare/waterfall/waterfall",
+        "custom-navigation-bar": "/frameBase/Component/CustomNavigationBar/CustomNavigationBar/",
+        "xng": "/frameBase/components/xng/xng",
+        "user-info-authorizer": "/frameBase/components/user-info-authorizer/user-info-authorizer",
+        "global-components": "/common/components/global-components/global-components",
+        "xng-nav-bar": "/frameBase/Component/XngNavBar/XngNavBar/"
+    }
+}

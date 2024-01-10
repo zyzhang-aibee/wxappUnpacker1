@@ -1,0 +1,81 @@
+var ONE_MINUTE = 60 * 1000;
+var ONE_HOUR = 60 * ONE_MINUTE;
+var ONE_DAY = 24 * ONE_HOUR;
+var ONE_YEAR = 365 * ONE_DAY;
+
+function selectTime(time) {
+    var date = getDate(time);
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var day = date.getDate();
+    var hour = date.getHours();
+    var minute = date.getMinutes();
+    return (({
+        YY: year || '0000',
+        MM: month || '00',
+        DD: day || '00',
+        hh: hour < 10 ? '0' + hour : hour,
+        mm: minute < 10 ? '0' + minute : minute,
+    }))
+};
+
+function format(time, pattern) {
+    var result = pattern || 'YY-MM-DD hh:mm';
+    var date = selectTime(time);
+    var fields = ['YY', 'MM', 'DD', 'hh', 'mm'];
+    for (var i = 0; i < 5; i++) {
+        var field = fields[((nt_0 = (i), null == nt_0 ? undefined : 'number' === typeof nt_0 ? nt_0 : "" + nt_0))];
+        result = result.replace(field, date[((nt_1 = (field), null == nt_1 ? undefined : 'number' === typeof nt_1 ? nt_1 : "" + nt_1))])
+    };
+    return (result)
+};
+
+function fromNow(time, limit, dataType, partten) {
+    limit = limit || 30;
+    dataType = dataType || 'days';
+    if (time) {
+        var before = Date.now() - time;
+        var tm = Math.floor(before / ONE_YEAR);
+        if (tm > 0) {
+            if (time && dataType !== 'years') {
+                return (format(time, partten))
+            };
+            return (tm + '年前')
+        };
+        tm = Math.floor(before / ONE_DAY);
+        if (tm > 0) {
+            if (tm === 1 && Math.floor(before / ONE_HOUR) < 24) {
+                return ('昨天')
+            };
+            if (limit && dataType === 'days' && tm > limit) {
+                return (format(time, partten))
+            };
+            return (tm + '天前')
+        };
+        tm = Math.floor(before / ONE_HOUR);
+        if (tm > 0) {
+            return (tm + '小时前')
+        };
+        tm = Math.floor(before / ONE_MINUTE);
+        if (tm > 0) {
+            return (tm + '分钟前')
+        };
+        return ('刚刚')
+    };
+    return ('未知')
+};
+
+function formatUnixTime(t) {
+    var time = getDate(t);
+    var years = time.getFullYear();
+    var months = time.getMonth() + 1;
+    var days = time.getDate();
+    var hours = time.getHours();
+    var minutes = time.getMinutes();
+    return (years + '年' + months + '月' + days + '日' + ' ' + hours + ':' + (minutes < 10 ? '0' + minutes : minutes))
+};
+module.exports = ({
+    format: format,
+    fromNow: fromNow,
+    formatUnixTime: formatUnixTime,
+});

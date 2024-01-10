@@ -1,0 +1,22 @@
+<view catchtouchmove="preventScroll" class="container">
+    <view catchtap="{{maskClosable?'handleClose':''}}" class="mask"></view>
+    <view class="body">
+        <image catchtap="handleClose" class="close-btn" src="http://static2.xiaoniangao.cn/mini_app/components/exit.png" wx:if="{{closable}}"></image>
+        <view class="title" wx:if="{{title}}">{{title}}</view>
+        <view class="content" wx:if="{{content}}">
+            <block wx:if="{{contentKeys}}">
+                <view class="content-item" wx:for="{{contentKeys}}" wx:for-item="key" wx:key="{{index}}">
+                    <view class="content-key">{{key}} : </view>
+                    <text class="content-value">{{content[key]}}</text>
+                </view>
+            </block>
+            <view selectable class="tip" wx:else>{{content}}</view>
+        </view>
+        <view class="btns" style="{{actions.length===1?'justify-content: center;':''}}" wx:if="{{actions.length}}">
+            <view catchtap="onBtnTap" class="btn btn-{{btn.type}}" data-index="{{index}}" wx:for="{{actions}}" wx:for-item="btn" wx:key="{{index}}">
+                <button class="reset-button btn-text" openType="{{btn.openType}}" wx:if="{{btn.openType}}">{{btn.text}}</button>
+                <view class="btn-text" wx:else>{{btn.text}}</view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,13 @@
+{
+    "backgroundColor": "#eeeff4",
+    "usingComponents": {
+        "add-btn-view": "/pages/specialPlay/article/editArticlePage/components/addBtnView/addBtnView",
+        "header": "/pages/specialPlay/article/editArticlePage/components/headerView/headerView",
+        "section-view": "/pages/specialPlay/article/editArticlePage/components/sectionView/sectionView",
+        "custom-navigation-bar": "/frameBase/Component/CustomNavigationBar/CustomNavigationBar/",
+        "xng": "/frameBase/components/xng/xng",
+        "user-info-authorizer": "/frameBase/components/user-info-authorizer/user-info-authorizer",
+        "global-components": "/common/components/global-components/global-components",
+        "xng-nav-bar": "/frameBase/Component/XngNavBar/XngNavBar/"
+    }
+}

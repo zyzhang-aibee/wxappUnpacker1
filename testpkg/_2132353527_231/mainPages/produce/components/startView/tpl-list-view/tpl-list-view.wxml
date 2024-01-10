@@ -1,0 +1,24 @@
+<view class="container">
+    <view class="tpl-header">推荐模板</view>
+    <view class="tpl-list-con">
+        <view class="tpl-con" wx:if="{{index>0}}" wx:for="{{tplList}}" wx:for-item="tpl" wx:key="{{tpl.id}}">
+            <view class="tpl-preview-container" data-tpl-index="{{index}}" data-tplid="{{tpl.id}}" id="tpl-{{index}}">
+                <video autoplay loop bindfullscreenchange="onFullScreenChange" bindpause="handleVideoPause" bindplay="handleVideoPlay" class="tpl-video {{isVideoHide?'fake-hidden':''}}" customCache="{{false}}" id="video-{{index}}" poster="{{tpl.p_url}}" src="{{tpl.v_url}}" wx:if="{{playingTplIdx===index}}">
+                    <cover-view bindtap="onTplTap" class="video-cover-view" data-tpl-index="{{index}}" data-tplid="{{tpl.id}}" wx:if="{{!isVideoFullScreen}}"></cover-view>
+                </video>
+                <view bindtap="onTplTap" class="tpl-name-planb" data-tpl-index="{{index}}" data-tplid="{{tpl.id}}" wx:if="{{playingTplIdx!==index||isVideoHide}}">
+            {{tpl.title}}
+          </view>
+                <image lazyLoad bindtap="onTplTap" class="tpl-cover" data-tpl-index="{{index}}" data-tplid="{{tpl.id}}" mode="aspectFill" src="{{tpl.p_url}}" wx:if="{{playingTplIdx!==index||isVideoHide}}"></image>
+                <view bindtap="onTplTap" class="play-btn" data-tpl-index="{{index}}" data-tplid="{{tpl.id}}" wx:if="{{playingTplIdx!==index||isVideoHide}}">
+                    <image lazyLoad class="play-icon" src="{{imgRoot}}/produce/tpl/play-white-circle.png"></image>
+                </view>
+            </view>
+            <view bindtap="goMakeAlbum" class="make-btn make-btn-planb" data-tpl-id="{{tpl.id}}" data-tpl-index="{{index}}">使用模板</view>
+        </view>
+        <view bindtap="gotoAllTplTap" class="goto-all-tpl tpl-con">
+      查看全部模板
+    </view>
+    </view>
+</view>
+<wxs module="imgRoot" src="../../../../../common/wxs/imgRoot.wxs" />

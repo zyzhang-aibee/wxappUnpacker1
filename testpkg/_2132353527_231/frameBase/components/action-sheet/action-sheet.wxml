@@ -1,0 +1,41 @@
+<view catchtouchmove="preventScroll" class="action-sheet">
+    <view catchtap="hide" class="mask {{show?'':'hide'}}"></view>
+    <view class="body {{show?'':'hide'}}">
+        <view class="title" wx:if="{{title}}">{{title}}</view>
+        <view class="actions">
+            <block wx:if="{{actions.length}}">
+                <view catchtap="onTap" class="action {{action.icon?'':'no-icon'}} {{action.tip?'':'no-tip'}}" data-data="{{action.data}}" data-index="{{index}}" id="{{action.id}}" wx:for="{{actions}}" wx:for-item="action" wx:key="{{index}}">
+                    <button showMessageCard class="action-btn" openType="{{action.openType}}" wx:if="{{action.openType}}"></button>
+                    <image class="action-icon" src="{{action.icon}}" wx:if="{{action.icon}}"></image>
+                    <view class="action-content">
+                        <view class="action-title {{!action.icon&&!action.tip?'action-title-single':''}}" style="color: {{action.color||'unset'}};">{{action.title}}</view>
+                        <view class="action-tip" wx:if="{{action.tip}}">{{action.tip}}</view>
+                    </view>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="group" wx:for="{{groups}}" wx:for-index="rowIndex" wx:for-item="group" wx:key="rowIndex">
+                    <view class="group-header">
+                        <view class="group-header-title">{{group.title}}</view>
+                        <view class="group-header-tip">{{group.tip}}</view>
+                    </view>
+                    <view class="group-actions">
+                        <view catchtap="onTap" class="group-action" data-col-index="{{colIndex}}" data-data="{{action.data}}" data-row-index="{{rowIndex}}" id="{{action.id}}" wx:for="{{group.actions}}" wx:for-index="colIndex" wx:for-item="action" wx:key="colIndex">
+                            <image class="group-action-icon" src="{{action.icon}}"></image>
+                            <view class="group-action-text">{{action.text}}</view>
+                            <button showMessageCard class="action-btn" data-data="{{action.data}}" openType="{{action.openType}}" wx:if="{{action.openType}}"></button>
+                            <view class="group-action-tip" wx:if="{{action.tip}}">
+                                <view class="group-action-tip-text-con">
+                                    <view class="group-action-tip-text">{{action.tip}}</view>
+                                </view>
+                                <image class="group-action-tip-triangle" src="{{imgRoot}}/discover/triangle_yellow_down_v2.png"></image>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <view catchtap="hide" class="action-default">取消</view>
+    </view>
+</view>
+<wxs module="imgRoot" src="../../../common/wxs/imgRoot.wxs" />

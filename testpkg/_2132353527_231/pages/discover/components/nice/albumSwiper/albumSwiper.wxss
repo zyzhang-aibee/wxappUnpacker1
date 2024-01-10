@@ -1,0 +1,61 @@
+.swiper-ctn {
+    padding: 15px 15px 0;
+}
+
+.banner-ctn,.banner-item {
+    position: relative;
+    border-radius: 4px;
+}
+
+.swiper-wrap {
+    height: 60vw;
+}
+
+.banner-title-ctn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+    background-image: linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0.8));
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.5;
+    padding: 10px 15px 22px;
+}
+
+.banner-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.banner-item .banner-image {
+    width: 100%;
+    height: 100%;
+}
+
+.banner-dots-ctn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+}
+
+.banner-dot {
+    width: 5px;
+    height: 5px;
+    border: 1px solid #d9d9d9;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.cur-banner {
+    background-color: #d9d9d9;
+}

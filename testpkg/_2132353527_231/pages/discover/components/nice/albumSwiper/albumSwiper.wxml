@@ -1,0 +1,15 @@
+<view class="swiper-ctn">
+    <view class="banner-ctn">
+        <swiper autoplay="{{true}}" bindchange="onSwiperChange" circular="{{true}}" class="swiper-wrap" duration="300" interval="5000">
+            <swiper-item bindtap="onSwiperItemTap" class="banner-item" wx:for="{{banners}}" wx:key="{{index}}">
+                <image lazyLoad class="banner-image" mode="aspectFill" src="{{item.url}}"></image>
+                <view class="banner-title-ctn">
+                    <text class="banner-title">{{item.title}}</text>
+                </view>
+            </swiper-item>
+        </swiper>
+        <view class="banner-dots-ctn">
+            <view class="banner-dot {{bannerIdx==curBannerIdx?'cur-banner':''}}" wx:for="{{banners}}" wx:for-index="bannerIdx" wx:key="{{bannerIdx}}"></view>
+        </view>
+    </view>
+</view>

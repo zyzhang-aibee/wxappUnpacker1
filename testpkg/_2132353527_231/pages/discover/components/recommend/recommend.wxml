@@ -1,0 +1,5 @@
+<pull-down-refresh bind:loadMore="loadMore" bind:onRefresh="onPullDownRefresh" curTabName="{{TOPIC_NAMES.RECOMMEND}}" id="pull-down-refresh" refreshing="{{refreshing}}">
+    <list bind:reload="loadMore" hasNext="{{recommend.hasNext}}" isFetching="{{recommend.isFetching}}" list="{{list}}" recommendMark="{{recommendMark}}"></list>
+    <loading-more bind:reload="loadMore" hasNext="{{recommend.hasNext}}" isFetching="{{recommend.isFetching}}" wx:if="{{list.length}}"></loading-more>
+</pull-down-refresh>
+<publish-menu listName="discoverRecommend"></publish-menu>

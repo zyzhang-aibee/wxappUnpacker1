@@ -1,0 +1,9 @@
+<view class="container">
+    <view class="scroll-wrapper">
+        <scroll-view scrollWithAnimation scrollX bindscroll="handleScroll" class="scroll-view" scrollLeft="{{scrollLeft}}">
+            <button catchtap="checkTag" class="tag tag-{{index}} {{item.id===tag.id?'checked':''}}" data-tag="{{item}}" id="tag" wx:for="{{tags}}" wx:key="{{item.id}}">
+        {{item.title}}
+      </button>
+        </scroll-view>
+    </view>
+</view>

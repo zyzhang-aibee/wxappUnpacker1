@@ -1,0 +1,24 @@
+var IMG_ROOT = 'https://static2.xiaoniangao.cn/mini_app/img';
+module.exports = ({
+    IMG_ROOT: IMG_ROOT,
+    ALBUM_TYPE: ({
+        SPLICE_VIDEOS: 1,
+        ARTICLE: 2,
+    }),
+    FEED_TYPE: ({
+        ALBUM: 1,
+        ALBUM_COMMENT: 2,
+        PURE_TEXT: 3,
+        PHOTO: 4,
+        MUSIC: 5,
+        ARTICLE: 6,
+    }),
+    ALBUM_PUBLISH_TYPE_STATUS: ({
+        NORMAL: 0,
+        PUBLISH: 1,
+    }),
+    ALBUM_TYPE_STATUS: ({
+        CONTRIBUTION: 1,
+        FEATURED: 2,
+    }),
+});

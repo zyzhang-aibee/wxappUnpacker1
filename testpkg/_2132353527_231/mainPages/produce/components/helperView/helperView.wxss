@@ -1,0 +1,154 @@
+.helper-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    background: #fff;
+    position: fixed;
+    z-index: 100001;
+}
+
+.helper-bar-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.helper-bar-left-img {
+    width: 31px;
+    height: 31px;
+    padding-left: 15px;
+}
+
+.helper-bar-left-only-text {
+    font-size: 15px;
+    color: #3d3d3d;
+    margin-left: 15px;
+}
+
+.helper-bar-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+}
+
+.helper-sign {
+    width: 80px;
+    height: 30px;
+    border-radius: 16px;
+    border: 1px solid #d3d3d3;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.helper-sign-text {
+    font-size: 15px;
+    color: #3d3d3d;
+}
+
+.helper-sign-icon {
+    position: relative;
+    margin-left: 5px;
+    z-index: 150;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 15px;
+    color: #000;
+    width: 20px;
+    height: 20px;
+}
+
+.helper-sign-icon-shadow {
+    background: #fff;
+    border: 1px solid #333;
+    box-shadow: 0 3px 8px 0 rgba(0,0,0,0.20);
+}
+
+.helper-sign-icon-light {
+    background: #ffe22a;
+    border: 1px solid #ffe22a;
+}
+
+.helper-mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 50;
+}
+
+.helper-mask-item-con {
+    position: absolute;
+    right: 45px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.helper-mask-item {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+    padding: 13px 0;
+    background: #fff;
+    width: 160px;
+    text-align: center;
+    position: relative;
+    line-height: 1.2;
+    border-radius: 0;
+}
+
+.helper-mask-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: #f0f0f0;
+}
+
+.guide-video-con {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.guide-video-msak {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.guide-video {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 70vw;
+    height: 120vw;
+}
+
+.guide-close {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 74rpx;
+    height: 74rpx;
+}

@@ -1,0 +1,20 @@
+<view catchtouchmove="true" class="container" hidden="{{!visable}}">
+    <view catchtap="hideMask" class="mask {{isMaskTransparent?'mask-transparent':''}}" wx:if="{{showMask&&maskVisable}}"></view>
+    <view class="body">
+        <text class="comment">评论</text>
+        <view class="input-box" wx:if="{{visable}}">
+            <textarea autoFocus="{{autoFocus}}" bindconfirm="handleSubmit" bindfocus="handleFocus" bindinput="handleChange" bindlinechange="handleLineChange" class="input" cursorSpacing="{{cursorSpacing}}" fixed="{{true}}" focus="{{focus}}" id="input" maxlength="{{480}}" placeholder="{{addonBefore?'回复 '+addonBefore:'添加评论...'}}" showConfirmBar="{{false}}" value="{{input}}"></textarea>
+            <text class="input-num">{{inputNum}}/480</text>
+        </view>
+        <view class="footer">
+            <view>
+                <view bindtap="handleIsForward" class="forward-checkbox" wx:if="{{isShowForward}}">
+                    <image lazyLoad class="checkbox-img" src="{{imgRoot}}/discover/{{isForward?'':'un_'}}checked.png"></image>
+                    <text>评论并转发</text>
+                </view>
+            </view>
+            <view catchtap="handleSubmit" class="submit-btn {{inputNum<=0?'btn-disable':''}}">{{addonBefore?'提交':'发表评论'}}</view>
+        </view>
+    </view>
+</view>
+<wxs module="imgRoot" src="../../../../../../common/wxs/imgRoot.wxs" />

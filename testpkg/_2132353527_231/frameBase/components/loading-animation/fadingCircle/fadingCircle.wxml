@@ -1,0 +1,38 @@
+<view class="sk-fading-circle" style="width: {{size}}px; height: {{size}}px;">
+    <view class="sk-circle1 sk-circle">
+        <view class="sk-dot" style="background-color: {{color}};"></view>
+    </view>
+    <view class="sk-circle2 sk-circle">
+        <view class="sk-dot" style="background-color: {{color}};"></view>
+    </view>
+    <view class="sk-circle3 sk-circle">
+        <view class="sk-dot" style="background-color: {{color}};"></view>
+    </view>
+    <view class="sk-circle4 sk-circle">
+        <view class="sk-dot" style="background-color: {{color}};"></view>
+    </view>
+    <view class="sk-circle5 sk-circle">
+        <view class="sk-dot" style="background-color: {{color}};"></view>
+    </view>
+    <view class="sk-circle6 sk-circle">
+        <view class="sk-dot" style="background-color: {{color}};"></view>
+    </view>
+    <view class="sk-circle7 sk-circle">
+        <view class="sk-dot" style="background-color: {{color}};"></view>
+    </view>
+    <view class="sk-circle8 sk-circle">
+        <view class="sk-dot" style="background-color: {{color}};"></view>
+    </view>
+    <view class="sk-circle9 sk-circle">
+        <view class="sk-dot" style="background-color: {{color}};"></view>
+    </view>
+    <view class="sk-circle10 sk-circle">
+        <view class="sk-dot" style="background-color: {{color}};"></view>
+    </view>
+    <view class="sk-circle11 sk-circle">
+        <view class="sk-dot" style="background-color: {{color}};"></view>
+    </view>
+    <view class="sk-circle12 sk-circle">
+        <view class="sk-dot" style="background-color: {{color}};"></view>
+    </view>
+</view>

@@ -1,0 +1,4 @@
+<block wx:if="{{show}}">
+    <custom-ad index="{{index}}" wx:if="{{type==='custom-ad'}}"></custom-ad>
+    <ad-wx index="{{index}}" wx:else></ad-wx>
+</block>

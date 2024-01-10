@@ -1,0 +1,22 @@
+<view bindtap="handleClickCover" class="container" style="width: {{BIG_PIC_VERT_WIDTH}}px" wx:if="{{album.w<album.h*3/4}}">
+    <view class="vertical-wrapper">
+        <view class="nick-album-flag" wx:if="{{showNiceAlbumFlag&&album.s===NICE_ALBUM_FLAG}}">佳作</view>
+        <view class="article-flag" wx:if="{{album.album_type===ALBUM_TYPE.ARTICLE}}">图文</view>
+        <image lazyLoad class="vertical-pic" mode="aspectFill" src="{{album.url}}" style="height: {{VERT_PIC_MAX_HEIGHT}}px"></image>
+        <image lazyLoad class="play-icon" src="{{imgRoot}}/discover/cover_play_v2.png" wx:if="{{album.album_type!==ALBUM_TYPE.ARTICLE}}"></image>
+        <view class="views" wx:if="{{album.views}}">{{utils.limitCount(album.views)}}人{{album.album_type===ALBUM_TYPE.ARTICLE?'阅读':'播放'}}</view>
+        <view class="duration" wx:if="{{album.album_type!==ALBUM_TYPE.ARTICLE}}">{{utils.formatDuration(album.du)}}</view>
+    </view>
+</view>
+<view bindtap="handleClickCover" class="container" style="height: {{BIG_PIC_HORI_HEIGHT}}px" wx:else>
+    <view class="horizontal-wrapper">
+        <view class="nick-album-flag" wx:if="{{showNiceAlbumFlag&&album.s===NICE_ALBUM_FLAG}}">佳作</view>
+        <view class="article-flag" wx:if="{{album.album_type===ALBUM_TYPE.ARTICLE}}">图文</view>
+        <image lazyLoad class="horizontal-pic" mode="aspectFill" src="{{album.url}}"></image>
+        <image lazyLoad class="play-icon" src="{{imgRoot}}/discover/cover_play_v2.png" wx:if="{{album.album_type!==ALBUM_TYPE.ARTICLE}}"></image>
+        <view class="views" wx:if="{{album.views}}">{{utils.limitCount(album.views)}}人{{album.album_type===ALBUM_TYPE.ARTICLE?'阅读':'播放'}}</view>
+        <view class="duration" wx:if="{{album.album_type!==ALBUM_TYPE.ARTICLE&&!utils.isBlessVideo(album.tpl_id)}}">{{utils.formatDuration(album.du)}}</view>
+    </view>
+</view>
+<wxs module="imgRoot" src="../../../../../common/wxs/imgRoot.wxs" />
+<wxs module="utils" src="../../../../../common/wxs/discover/utils.wxs" />

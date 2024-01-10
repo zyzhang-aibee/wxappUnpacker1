@@ -1,0 +1,3 @@
+<view class="container">
+    <collapsible-text content="{{dynamic.msg}}" fontSize="{{16}}" lineHeight="{{26}}"></collapsible-text>
+</view>

@@ -1,0 +1,32 @@
+<view class="container">
+    <view class="actions">
+        <view class="action" wx:if="{{page==='dynamicSharePage'}}">
+            <image lazyLoad class="action-icon action-icon-views action-view-icon" src="{{imgRoot}}/play/views.png"></image>
+            <view class="action-count">{{viewCountBan?'':utils.limitCount(dynamic.views)}}</view>
+        </view>
+        <view class="action">
+            <user-info-authorizer bind:onComplete="handleFavor" effective="{{needAuthFavor}}">
+                <image lazyLoad animation="{{animationData}}" class="action-icon {{page==='dynamicSharePage'?'':'action-favor-icon'}}" id="interationFavor" src="{{dynamic.favor.has_favor?imgRoot+'/play/liked.png':imgRoot+'/play/like.png'}}"></image>
+            </user-info-authorizer>
+            <user-info-authorizer bind:onComplete="{{dynamic.favor.total?'goFavorPage':'handleFavor'}}" effective="{{needAuthFavor}}">
+                <view class="action-count">
+          {{favorCountBan?'':utils.limitCount(dynamic.favor.total)||'点赞'}}
+        </view>
+            </user-info-authorizer>
+        </view>
+        <user-info-authorizer bind:onComplete="handleComment" effective="{{needAuthComment}}" wx:if="{{dynamic.album_type!==ALBUM_TYPE.ARTICLE}}">
+            <view class="action" id="interationComment">
+                <image lazyLoad class="action-icon" src="{{imgRoot}}/play/message.png"></image>
+                <view class="action-count">{{commentListBan?'':utils.limitCount(dynamic.comment_count)||'评论'}}</view>
+            </view>
+        </user-info-authorizer>
+        <user-info-authorizer bind:onComplete="handleShare" effective="{{needAuthShare}}">
+            <button class="action action-share" data-dynamic="{{dynamic}}" id="interationShare" openType="{{shareBan?'':'share'}}">
+                <image lazyLoad class="action-icon" src="{{imgRoot}}/play/share.png"></image>
+                <view class="action-count">{{shareBan?'':utils.limitCount(dynamic.share)||'分享'}}</view>
+            </button>
+        </user-info-authorizer>
+    </view>
+</view>
+<wxs module="utils" src="../../../../../../common/wxs/discover/utils.wxs" />
+<wxs module="imgRoot" src="../../../../../../common/wxs/imgRoot.wxs" />

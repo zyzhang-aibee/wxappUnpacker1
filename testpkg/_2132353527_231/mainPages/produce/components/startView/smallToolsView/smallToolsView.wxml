@@ -1,0 +1,13 @@
+<view class="small-toosl-view {{isNewPageB||isTplSort?'':'shadow'}}">
+    <view class="small-tools-title" wx:if="{{!isNewPageB&&!isTplSort}}">小工具</view>
+    <view class="small-tools-container">
+        <view bindtap="onToolClick" class="small-tool-wrap" data-type="{{tool.type}}" id="{{tool.type}}" wx:if="{{tool.type!=='article'||isShowMakeArticle}}" wx:for="{{smallTools}}" wx:for-index="idx" wx:for-item="tool" wx:key="{{idx}}">
+            <view class="small-tool-item">
+                <image lazyLoad class="tool-icon" src="{{tool.picSrc}}"></image>
+                <view class="new-tool-tip" wx:if="{{tool.isNew===true}}">NEW</view>
+            </view>
+            <text class="tool-title">{{tool.title}}</text>
+        </view>
+        <view class="blank-holder" wx:if="{{!isShowMakeArticle}}"></view>
+    </view>
+</view>

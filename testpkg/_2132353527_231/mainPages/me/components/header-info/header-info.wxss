@@ -1,0 +1,100 @@
+.container {
+    position: relative;
+    padding: 15px 30px 30px;
+    background-color: #ffffff;
+}
+
+.myself-container {
+    display: flex;
+    align-items: center;
+}
+
+.avatar-container {
+    margin-right: 20px;
+}
+
+.avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    will-change: transform;
+}
+
+.name-container {
+    width: calc(100vw - 170px);
+}
+
+.nowrap-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.nick {
+    font-size: 2.3em;
+    color: #333333;
+    font-weight: bold;
+}
+
+.id {
+    margin-top: 1px;
+    color: #999999;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.get-wx-name-btn {
+    margin-top: 14px;
+    background: #ffffff;
+    line-height: 1.4;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #6987ab;
+    padding: 0;
+    text-align: left;
+}
+
+.follow-area {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.my-profile-btn {
+    color: #666666;
+    font-size: 1.5em;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 10px;
+    white-space: nowrap;
+}
+
+.follow-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #666666;
+}
+
+.follow-num {
+    color: #333333;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.follow-text {
+    white-space: nowrap;
+    font-size: 1.5em;
+}
+
+.follow-line {
+    width: 1px;
+    height: 33px;
+    background-color: #979797;
+}
+
+.fans-con {
+    padding-right: 30rpx;
+}

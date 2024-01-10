@@ -1,0 +1,13 @@
+{
+    "backgroundColor": "#ffffff",
+    "usingComponents": {
+        "city-list": "../components/region/city-list/city-list",
+        "city-group-picker": "../components/region/picker/picker",
+        "loading": "/frameBase/components/loading-animation/fadingCircle/fadingCircle",
+        "custom-navigation-bar": "/frameBase/Component/CustomNavigationBar/CustomNavigationBar/",
+        "xng": "/frameBase/components/xng/xng",
+        "user-info-authorizer": "/frameBase/components/user-info-authorizer/user-info-authorizer",
+        "global-components": "/common/components/global-components/global-components",
+        "xng-nav-bar": "/frameBase/Component/XngNavBar/XngNavBar/"
+    }
+}

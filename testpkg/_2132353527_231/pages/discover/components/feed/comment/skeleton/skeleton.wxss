@@ -1,0 +1,51 @@
+.box {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.left {
+    padding-top: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.nick {
+    width: 50px;
+    height: 14px;
+    margin-top: 13px;
+}
+
+.comment {
+    width: 50%;
+    height: 20px;
+    margin-top: 21px;
+}
+
+.divider-e5 {
+    position: relative;
+}
+
+.divider-e5:after {
+    position: absolute;
+    content: '';
+    left: 15px;
+    right: 15px;
+    bottom: 0;
+    height: 1px;
+    background-color: #DEDEDE;
+    transform-origin: 0 0;
+    transform: scaleY(0.5);
+}

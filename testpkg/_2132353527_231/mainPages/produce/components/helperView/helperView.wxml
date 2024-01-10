@@ -1,0 +1,28 @@
+<view class="helper-bar" style="width:calc(100vw - {{rightSpace}}px); top:{{helpBarTop}}px; height:{{navigationTitleBarHeight}}px;">
+    <view catchtap="onNavBarLeftTap" class="helper-bar-left" wx:if="{{currentPage!==-1}}">
+        <image class="helper-bar-left-img" src="{{imgRoot}}/back.png"></image>
+    </view>
+    <view catchtap="onHistoryTap" class="helper-bar-left" wx:else>
+        <view class=".helper-bar-left-only-text">历史记录</view>
+    </view>
+    <view class="helper-bar-right">
+        <view bindtap="onHelpTap" class="helper-sign">
+            <view class="helper-sign-text">帮助</view>
+            <view class="helper-sign-icon {{isHelpHighlight?'helper-sign-icon-light':'helper-sign-icon-shadow'}}" id="helper-sign-icon">?</view>
+        </view>
+        <view bindtap="onMaskTap" class="helper-mask" wx:if="{{isActive}}">
+            <view class="helper-mask-item-con" style="top:{{helpMenuTop}}px">
+                <view catchtap="{{item.onItemTap}}" class="helper-mask-item" wx:for="{{helperList}}" wx:key="{{index}}">
+          {{item.text||(item.name==='switchFontSize'&&isBigFontScheme?'切换正常字体':'切换大字体')}}
+        </view>
+                <button class="helper-mask-item" openType="contact">联系客服</button>
+            </view>
+        </view>
+        <view class="guide-video-con" wx:if="{{isShowGuideVideo}}">
+            <view bindtap="onMaskTap" class="guide-video-msak"></view>
+            <video autoplay loop class="guide-video" customCache="{{false}}" src="https://static2.xiaoniangao.cn/web/inner/img/video/guideVideoC.mp4" style="top:{{navigationHeight}}px;"></video>
+            <image bindtap="onMaskTap" class="guide-close" src="https://static2.xiaoniangao.cn/web/inner/img/produce/close.png" style="top:calc(120vw + {{navigationHeight+4}}px);"></image>
+        </view>
+    </view>
+</view>
+<wxs module="imgRoot" src="../../../../common/wxs/imgRoot.wxs" />

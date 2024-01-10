@@ -1,0 +1,14 @@
+{
+    "navigationBarTitleText": "小年糕+",
+    "usingComponents": {
+        "user-header": "./components/user-header/user-header",
+        "user-info": "./components/user-info/user-info",
+        "share-card-generator": "./components/share-card-generator/share-card-generator",
+        "list": "./components/list/list",
+        "custom-navigation-bar": "/frameBase/Component/CustomNavigationBar/CustomNavigationBar/",
+        "xng": "/frameBase/components/xng/xng",
+        "user-info-authorizer": "/frameBase/components/user-info-authorizer/user-info-authorizer",
+        "global-components": "/common/components/global-components/global-components",
+        "xng-nav-bar": "/frameBase/Component/XngNavBar/XngNavBar/"
+    }
+}

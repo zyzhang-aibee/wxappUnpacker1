@@ -1,0 +1,9 @@
+<view class="container">
+    <big-cover album="{{album}}" bind:onCoverClick="handlePlay" showNiceAlbumFlag="{{false}}" wx:if="{{!withoutAlbum}}"></big-cover>
+    <view class="title" style="{{withoutAlbum?'padding-top: 0;':''}}" wx:if="{{album.title}}">
+    {{album.title}}
+  </view>
+    <view class="story" wx:if="{{album.story&&!albumStoryBan}}">
+        <collapsible-text content="{{album.story}}" fontSize="{{15}}" lineHeight="{{24}}" numberOfLines="{{2}}"></collapsible-text>
+    </view>
+</view>

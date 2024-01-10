@@ -1,0 +1,15 @@
+<template name="album-detail-dialog">
+    <view catchtap="onDetailDialogExit" class="album-detail-dialog-con" style="display: {{albumDetailDialog.hidden?'none':''}}">
+        <view class="album-detail-dialog">
+            <view class="album-detail-dialog-title">{{albumDetailDialog.title}}</view>
+            <view catchtap="onDetailDialogExit" class="album-detail-dialog-exit">
+                <image lazyLoad class="exit-img" src="{{imgRoot}}/play/exit.png"></image>
+            </view>
+            <view class="album-detail-dialog-item" wx:for="{{albumDetailDialog.items}}" wx:for-index="idx" wx:key="name">
+                <view class="album-detail-dialog-item-name">{{item.name}}：</view>
+                <text class="album-detail-dialog-item-text" selectable="{{true}}">{{item.text}}</text>
+            </view>
+        </view>
+    </view>
+</template>
+<wxs module="imgRoot" src="../../../wxs/imgRoot.wxs" />

@@ -1,0 +1,76 @@
+.container {
+    position: relative;
+}
+
+.horizontal-wrapper {
+    position: relative;
+    height: 100%;
+}
+
+.horizontal-pic {
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    will-change: transform;
+}
+
+.vertical-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.vertical-pic {
+    width: 100%;
+    border-radius: 6px;
+    will-change: transform;
+}
+
+.nice-album-flag {
+    z-index: 5;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    padding: 0px 6px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    color: #ffffff;
+    background: #ff2064;
+}
+
+.article-flag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 5;
+    padding: 0 6px;
+    font-size: 16px;
+    border-radius: 4px;
+    color: #ffffff;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    margin: -25px 0 0 -25px;
+}
+
+.views,.duration {
+    position: absolute;
+    bottom: 12px;
+    font-size: 13px;
+    color: #fff;
+    text-shadow: 0 1px 2px #000000;
+}
+
+.views {
+    left: 12px;
+}
+
+.duration {
+    right: 12px;
+}

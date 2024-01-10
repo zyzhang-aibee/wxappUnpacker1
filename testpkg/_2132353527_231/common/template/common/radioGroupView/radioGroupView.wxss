@@ -1,0 +1,56 @@
+.radio-group-view {
+    display: flex;
+    height: 48px;
+    line-height: 48px;
+    background: #fff;
+    align-items: center;
+    font-size: 15px;
+    border-bottom: thin solid #e5e5e5;
+}
+
+.radio-item {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.selected-item {
+    color: #ff2064;
+}
+
+.radio-item-con {
+    display: flex;
+    align-items: center;
+}
+
+.item-left-image {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+}
+
+.item-text {
+    position: relative;
+}
+
+.selected-text {
+    font-weight: bold;
+}
+
+.selected-text::after {
+    position: absolute;
+    content: '';
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    border-radius: 3px;
+    background: #ff2064;
+}
+
+.item-right-image {
+    width: 20px;
+    height: 20px;
+    margin-left: 6px;
+}

@@ -1,0 +1,14 @@
+.list {
+    background-color: #F3F3F3;
+}
+
+.splice {
+    text-align: center;
+    color: #7E7E7E;
+    background-color: #F5F6F7;
+}
+
+.separator {
+    height: 9px;
+    background-color: #F5F6F7;
+}

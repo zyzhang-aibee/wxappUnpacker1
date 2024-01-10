@@ -1,0 +1,17 @@
+<view class="recommend-tpl-con {{showShadow?'shadow':''}}">
+    <view class="recommend-tpl-head">
+        <view class="recommend-start-title" style="font-size:{{isTplSort?'24px':'1.7em'}};line-height:{{isTplSort?34:24}}px">{{sortName}}</view>
+        <view bindtap="onMoreTap" class="recommend-more" wx:if="{{showMore}}">更多</view>
+    </view>
+    <view class="hide-scrollbar-wrap">
+        <scroll-view class="recommend-tpl-wrap" scrollX="{{true}}">
+            <view catchtap="onRecommendItemTap" class="recommend-tpl-item" data-index="{{index}}" wx:for="{{recommendTplList}}" wx:key="{{index}}">
+                <view class="recommend-tpl-img" style="background-image:url({{item.url}})">
+                    <image lazyLoad class="paly-icon" src="{{imgRoot}}/produce/tpl/play-icon-gray.png"></image>
+                </view>
+                <view class="recommend-tpl-start-text">{{item.title}}</view>
+            </view>
+        </scroll-view>
+    </view>
+</view>
+<wxs module="imgRoot" src="../../../../../common/wxs/imgRoot.wxs" />

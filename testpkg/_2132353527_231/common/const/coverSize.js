@@ -1,0 +1,20 @@
+var E = {
+    DISCOVER_SIZE: "224x166",
+    SQUARE_SIZE: "224x166",
+    FEED_SIZE: "750x500",
+    BIG_HEAD_SIZE: "120X120",
+    HEAD_SIZE: "80x80",
+    BIG_PHOTO: "750x1206",
+    DRAFT_SM: "128x128",
+    PHOTO_LIST_SM: "180x180",
+    FAVORITE_SIZE: "90x90",
+    VIDEO_BCK_SIZE: "216x290",
+    VIDEO_SM_SIZE: "100x100",
+    FULL_PAGE_SIZE: "375x667",
+    SHARE_SIZE: "625x500",
+    POST_SIZE: "400x400",
+    MV_FEED: "330x470",
+    COMMIT_SIZE: "180x140"
+};
+
+module.exports = E;

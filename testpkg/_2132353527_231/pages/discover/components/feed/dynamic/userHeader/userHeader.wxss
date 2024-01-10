@@ -1,0 +1,101 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.avatar-container {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin-right: 12px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.min-follow-btn-con {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    transform: translate3d(-50%,-50%,0);
+    background-color: #FF2064;
+    border-radius: 50%;
+}
+
+.min-follow-btn {
+    width: 12px;
+    height: 12px;
+}
+
+.vip-flag {
+    position: absolute;
+    right: -5px;
+    bottom: 0;
+    width: 16px;
+    height: 16px;
+}
+
+.nick {
+    max-width: 150px;
+    height: 23px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    font-weight: bold;
+    color: #444444;
+}
+
+.nick-make-same {
+    max-width: 220rpx;
+}
+
+.time {
+    font-size: 12px;
+    font-weight: 300;
+    color: #444444;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+}
+
+.more-action-icon {
+    width: 51px;
+    height: 23px;
+    margin-left: 30rpx;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 24px;
+    color: #3F3843;
+    border-radius: 13px;
+    background: rgba(156,156,156,.1);
+}
+
+.red-btn {
+    border-radius: 100rpx;
+    background-color: #FF2064;
+    box-shadow: 0 4rpx 10rpx rgba(255,116,159,0.6);
+    padding: 18rpx 32rpx 18rpx 34rpx;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    font-weight: bold;
+    color: #FFFFFF;
+}

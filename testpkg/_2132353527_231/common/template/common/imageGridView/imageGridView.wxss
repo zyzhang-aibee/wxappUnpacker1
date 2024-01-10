@@ -1,0 +1,10 @@
+@import "xngImageBox.wxss";
+
+.image-grid-view {
+    padding: 10px 13px 0;
+}
+
+.image-grid-view-item {
+    float: left;
+    background: #ffffff;
+}

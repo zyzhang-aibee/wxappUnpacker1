@@ -1,0 +1,19 @@
+{
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "dark",
+    "navigationBarTitleText": "小年糕+",
+    "usingComponents": {
+        "dynamic": "/pages/discover/components/feed/dynamic/dynamic",
+        "dynamic-skeleton": "/pages/discover/components/feed/dynamic/skeleton/skeleton",
+        "comment-box": "/pages/discover/components/feed/comment/commentBox/commentBox",
+        "comment-list": "/pages/discover/components/feed/comment/commentList/commentList",
+        "dynamic-comment-input": "/pages/discover/components/feed/dynamicCommentInput/dynamicCommentInput",
+        "share-action-sheet": "/pages/discover/components/common/shareActionSheet/shareActionSheet",
+        "customer-service-entry": "/pages/discover/components/common/customer-service-entry/customer-service-entry",
+        "custom-navigation-bar": "/frameBase/Component/CustomNavigationBar/CustomNavigationBar/",
+        "xng": "/frameBase/components/xng/xng",
+        "user-info-authorizer": "/frameBase/components/user-info-authorizer/user-info-authorizer",
+        "global-components": "/common/components/global-components/global-components",
+        "xng-nav-bar": "/frameBase/Component/XngNavBar/XngNavBar/"
+    }
+}

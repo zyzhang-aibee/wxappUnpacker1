@@ -1,0 +1,5 @@
+<view class="container">
+    <view class="tip">您还没有关注的人</view>
+    <view class="tip">快去推荐内容中寻找吧</view>
+    <view bindtap="goRecommend" class="guide-btn">看推荐</view>
+</view>

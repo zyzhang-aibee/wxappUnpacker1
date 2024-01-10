@@ -1,0 +1,11 @@
+<view catchtouchmove="onContainerTouchMove" class="friend-circle-container" wx:if="{{showContainer}}">
+    <view class="poster-image-container" wx:if="{{posterImage}}">
+        <image class="friend-circle-poster-image" mode="aspectFit" src="{{posterImage}}" wx:if="{{posterImage}}"></image>
+        <view class="success-tips" wx:if="{{posterImage}}">
+      已保存到相册，快去分享吧！
+    </view>
+        <image catchtap="closePoster" class="close-icon" mode="aspectFit" src="{{imgRoot}}/specialPlay/mv/close3.png" wx:if="{{posterImage}}"></image>
+    </view>
+</view>
+<canvas-to-image bind:draw="canvasDraw" bind:success="canvasSuccess" height="{{height}}" images="{{images}}" width="{{width}}" wx:if="{{showCanvas}}"></canvas-to-image>
+<wxs module="imgRoot" src="../../../common/wxs/imgRoot.wxs" />

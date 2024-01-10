@@ -1,0 +1,5 @@
+<view class="container">
+    <text wx:if="{{isFetching&&hasNext}}">{{loadingText}}</text>
+    <text catchtap="handleTimeOutLoad" wx:if="{{!isFetching&&hasNext}}">加载中... ↓</text>
+    <text wx:if="{{!isFetching&&!hasNext}}">— · —</text>
+</view>

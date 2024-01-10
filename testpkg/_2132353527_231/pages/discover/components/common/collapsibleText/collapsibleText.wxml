@@ -1,0 +1,8 @@
+<view class="container">
+    <view class="{{measureDone&&folded?'foldedWrapper':'wrapper'}}" style="{{measureDone&&folded?'-webkit-line-clamp: '+numberOfLines+';':''}} max-height: {{folded?lineHeight*numberOfLines+'px':'none'}}; font-size: {{fontSize}}px; line-height: {{lineHeight}}px">
+        <text class="content">{{content}}</text>
+    </view>
+    <view bindtap="handleShowAll" class="collapse-btn" wx:if="{{measureDone&&folded}}">
+        <view class="collapse-btn-text">展开</view>
+    </view>
+</view>

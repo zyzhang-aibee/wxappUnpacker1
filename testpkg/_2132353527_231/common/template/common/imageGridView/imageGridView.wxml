@@ -1,0 +1,8 @@
+<template name="image-grid-view">
+    <view class="image-grid-view clearfloat">
+        <view class="image-grid-view-item" wx:for="{{imageGridViewListData}}" wx:for-index="idx" wx:key="{{idx}}">
+            <template is="xng-image-box" data="{{xngImageBoxData:item}}"></template>
+        </view>
+    </view>
+</template>
+<import src="./xngImageBox.wxml"></import>

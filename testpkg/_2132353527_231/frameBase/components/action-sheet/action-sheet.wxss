@@ -1,0 +1,214 @@
+.action-sheet {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100003;
+}
+
+.mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.6);
+}
+
+.mask.hide {
+    animation: fadeOut 0.2s forwards;
+}
+
+.body {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: #fff;
+    animation: fadeInUp 0.2s;
+}
+
+.body.hide {
+    animation: fadeOutDown 0.2s forwards;
+}
+
+.title {
+    height: 30px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.actions {
+}
+
+.action {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.action:not(:last-of-type):after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: #e4e4e4;
+}
+
+.action.no-icon {
+    justify-content: center;
+}
+
+.action.no-icon.no-tip {
+    padding: 12px 0 14px;
+}
+
+.action-icon {
+    width: 40px;
+    height: 40px;
+    margin-left: 11px;
+    margin-right: 13px;
+}
+
+.action-content {
+}
+
+.action-title {
+    margin-bottom: 1px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.action-title-single {
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.action-tip {
+    font-size: 14px;
+    color: #666666;
+}
+
+.action-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.group {
+    padding: 10px 0;
+}
+
+.group-header {
+    display: flex;
+    align-items: baseline;
+    padding: 0 25px;
+}
+
+.group-header-title {
+    padding-right: 8px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.group-header-tip {
+    font-size: 12px;
+    color: #999;
+}
+
+.group-actions {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.group-action {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25vw;
+    height: 70px;
+    padding: 0;
+    background-color: #fff;
+}
+
+.group-action-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.group-action-text {
+    line-height: 18px;
+    font-size: 12px;
+    color: #333;
+}
+
+.group-action>.action-btn {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.action-default {
+    width: 100%;
+    padding-top: 12px;
+    padding-bottom: 14px;
+    text-align: center;
+    font-size: 18px;
+    color: #666666;
+    background: #f8f8f8;
+}
+
+.group-action-tip {
+    position: absolute;
+    top: -40px;
+    right: 10px;
+    height: 44px;
+    max-width: 400%;
+}
+
+.group-action-tip-text-con {
+    border: 2px solid #000000;
+    border-radius: 3px;
+    background-color: #ffe22a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.group-action-tip-text {
+    padding: 3px 10px 4px;
+    border-radius: 3px;
+    background-color: #ffe22a;
+    color: #000000;
+    font-size: 13px;
+    line-height: 19px;
+    text-align: center;
+    overflow: visible;
+}
+
+.group-action-tip-triangle {
+    position: absolute;
+    width: 20px;
+    height: 9px;
+    right: 7vw;
+    bottom: 7px;
+}

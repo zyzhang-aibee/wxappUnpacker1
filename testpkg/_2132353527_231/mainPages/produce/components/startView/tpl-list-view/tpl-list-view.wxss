@@ -1,0 +1,123 @@
+.container {
+    padding: 15px;
+    box-shadow: inset 0 15px 30px -10px #eee;
+}
+
+.tpl-header {
+    font-size: 17px;
+    font-weight: bold;
+    color: #333;
+    line-height: 24px;
+    margin-bottom: 8px;
+}
+
+.tpl-list-con {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.tpl-con {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 335rpx;
+    font-size: 1.5em;
+}
+
+.goto-all-tpl {
+    justify-content: center;
+    background-color: #f1f5fa;
+    color: #9aa7cc;
+    font-family: PingFangSC-Regular;
+    font-size: 1.4em;
+    height: 500rpx;
+}
+
+.tpl-preview-container {
+    width: 335rpx;
+    height: 500rpx;
+    position: relative;
+}
+
+.tpl-video {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+}
+
+.video-cover-view {
+    width: 100%;
+    height: 80%;
+}
+
+.fake-hidden {
+    width: 0;
+    height: 0;
+}
+
+.make-btn-plana {
+    border-radius: 15px;
+    background-color: #FF2064;
+    padding: 8px 18px;
+    margin: 6px auto 12px;
+    color: #FFFFFF;
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 15px;
+}
+
+.make-btn-planb {
+    width: 110px;
+    height: 34px;
+    margin: 6px auto 18px;
+    box-sizing: border-box;
+    border-radius: 23px;
+    border: 1px solid #FF2064;
+    color: #FF2064;
+    text-align: center;
+    line-height: 34px;
+    font-size: 1em;
+}
+
+.tpl-cover {
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+}
+
+.tpl-name {
+    color: #333;
+    font-size: 1em;
+    line-height: 15px;
+    font-weight: 500;
+    margin: 14px auto 20px;
+}
+
+.play-btn {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: calc(250rpx - 25px);
+    left: calc(165rpx - 25px);
+}
+
+.play-icon {
+    width: 100%;
+    height: 100%;
+}
+
+.tpl-name-planb {
+    position: absolute;
+    top: 0;
+    width: 335rpx;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    font-size: 1em;
+    font-family: PingFangSC-Semibold;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(180deg,rgba(1,1,1,0.4) 0%,rgba(0,0,0,0) 100%);
+}

@@ -1,0 +1,32 @@
+<template name="xng-image-box">
+    <view bindtap="{{xngImageBoxData.tap}}" class="xng-image-box" data-id="{{xngImageBoxData.id}}" style="width:{{xngImageBoxData.imageBoxWidth}}px;height:{{xngImageBoxData.imageBoxWidth}}px">
+        <image lazyLoad class="main-image" src="{{xngImageBoxData.src}}"></image>
+        <view class="left-top" wx:if="{{xngImageBoxData.leftTop}}">
+            <span class="left-top-text" wx:if="{{xngImageBoxData.leftTop.text}}">
+      {{xngImageBoxData.leftTop.text}}
+      </span>
+        </view>
+        <view catchtap="{{xngImageBoxData.rightTop.tap}}" class="right-top" data-id="{{xngImageBoxData.id}}" wx:if="{{xngImageBoxData.rightTop}}">
+            <span class="right-top-text" wx:if="{{xngImageBoxData.rightTop.text}}">
+      {{xngImageBoxData.rightTop.text}}
+      </span>
+            <image lazyLoad class="right-top-icon" src="{{xngImageBoxData.right.src}}" wx:elif="{{xngImageBoxData.rightTop.src}}"></image>
+            <image lazyLoad class="right-top-icon" src="{{imgRoot}}/xngImageBox/choose-empty.png" wx:elif="{{xngImageBoxData.rightTop.type==='empty'}}"></image>
+            <image lazyLoad class="right-top-icon" src="{{imgRoot}}/xngImageBox/choose-red.png" wx:elif="{{xngImageBoxData.rightTop.type==='red'}}"></image>
+            <image lazyLoad class="right-top-icon" src="{{imgRoot}}/xngImageBox/choose-gray.png" wx:elif="{{xngImageBoxData.rightTop.type==='gray'}}"></image>
+        </view>
+        <view class="right-bottom" wx:if="{{xngImageBoxData.rightBottom}}">
+            <span class="right-bottom-text" wx:if="{{xngImageBoxData.rightBottom.text}}">
+      {{xngImageBoxData.rightBottom.text}}
+      </span>
+            <image lazyLoad class="right-bottom-icon" src="{{xngImageBoxData.right.src}}" wx:elif="{{xngImageBoxData.rightBottom.src}}"></image>
+            <image lazyLoad class="right-bottom-icon" src="{{imgRoot}}/vedio-icon.png" wx:elif="{{xngImageBoxData.rightBottom.type==='video'}}"></image>
+        </view>
+        <view class="bottom" wx:if="{{xngImageBoxData.bottom}}">
+            <span class="bottom-text" wx:if="{{xngImageBoxData.bottom.text}}">
+      {{xngImageBoxData.bottom.text}}
+      </span>
+        </view>
+    </view>
+</template>
+<wxs module="imgRoot" src="../../../wxs/imgRoot.wxs" />

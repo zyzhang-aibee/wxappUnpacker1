@@ -1,0 +1,32 @@
+<view class="header">
+    <view class="left">
+        <view class="avatar-container">
+            <image lazyLoad bindtap="goProfilePage" class="avatar" mode="aspectFill" src="{{isHideUser?imgRoot+'/play/icon-anonymous.png':user.hurl}}"></image>
+            <view bindtap="handleFollow" class="min-follow-btn-con" id="userHeaderFollow" wx:if="{{!( followedFriends&&followedFriends[user.mid] )&&!isAuthor&&!dynamic.hide_u&&user.mid!==10000&&user.nick}}">
+                <image lazyLoad class="min-follow-btn" src="{{imgRoot}}/discover/follow.png"></image>
+            </view>
+            <image lazyLoad class="vip-flag" src="{{imgRoot}}/avatar/account_type1.png" wx:if="{{user.account_type}}"></image>
+        </view>
+        <view>
+            <view bindtap="goProfilePage" class="nick {{canMakeSame?'nick-make-same':''}}">{{isHideUser?'小年糕网友':user.nick}}</view>
+            <view class="time">
+        {{moment.fromNow(dynamic.t,30,'days','YY年MM月DD日')}}
+      </view>
+        </view>
+    </view>
+    <view class="right" wx:if="{{isShowMoreBtn}}">
+        <block wx:if="{{isBlessVideo}}">
+            <user-info-authorizer bind:onComplete="handleMakeAlbum" wx:if="{{canMakeSame}}">
+                <button class="make-same-btn red-btn" id="makeAlbum">制作同款</button>
+            </user-info-authorizer>
+            <view bindtap="handleMoreAction" class="more-action-icon">更多</view>
+        </block>
+        <button bindtap="handleModifyAlbum" class="bottom-modify-btn red-btn" wx:elif="{{showModify}}">编辑作品</button>
+        <block wx:else>
+            <button bindtap="handleMakeAlbum" class="make-same-btn red-btn" id="makeAlbum" wx:if="{{canMakeSame}}">{{makeSameText}}</button>
+            <view bindtap="handleMoreAction" class="more-action-icon">更多</view>
+        </block>
+    </view>
+</view>
+<wxs module="moment" src="../../../../../../common/wxs/moment.wxs" />
+<wxs module="imgRoot" src="../../../../../../common/wxs/imgRoot.wxs" />

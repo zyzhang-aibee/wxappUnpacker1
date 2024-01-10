@@ -1,0 +1,4 @@
+<view catchtouchmove="preventScroll" class="mask" style="top: {{navigationHeight}}px;" wx:if="{{mask}}"></view>
+<view catchtap="onTap" class="container" style="{{style}}">
+    <text class="title">{{title}}</text>
+</view>

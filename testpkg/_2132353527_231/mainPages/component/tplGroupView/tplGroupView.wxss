@@ -1,0 +1,45 @@
+.tpl-group-con {
+    margin: 0 15px;
+    background-color: #fff;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.1);
+}
+
+.tpl-group-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px 2px 15px;
+    color: #333333;
+    font-weight: bold;
+}
+
+.tpl-group-header-left {
+    font-size: 2em;
+}
+
+.tpl-group-header-right {
+    color: #ff2064;
+    font-weight: normal;
+    font-size: 1.4em;
+}
+
+.tpl-group-name {
+    padding: 10px 15px;
+    color: #333333;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.tpl-all-btn-con {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.tpl-all-btn {
+    width: 100%;
+    color: #ff2064;
+    text-align: center;
+    font-size: 1.7em;
+}

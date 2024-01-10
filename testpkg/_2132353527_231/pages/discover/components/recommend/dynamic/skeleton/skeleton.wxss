@@ -1,0 +1,29 @@
+@import "../../../../../../__wuBaseWxss__/1.wxss";
+
+.box {
+    padding: 30rpx 30rpx 0 30rpx;
+    background-color: #fff;
+}
+
+.album {
+    height: 460rpx;
+    border-radius: 8rpx;
+}
+
+.footer-bar {
+    display: flex;
+    align-items: center;
+    height: 84rpx;
+}
+
+.avatar {
+    width: 64rpx;
+    height: 64rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+
+.nick {
+    width: 200rpx;
+    height: 40rpx;
+}

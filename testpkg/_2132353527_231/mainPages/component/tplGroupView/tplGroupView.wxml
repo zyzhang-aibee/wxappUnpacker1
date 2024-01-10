@@ -1,0 +1,16 @@
+<view class="tpl-group-con" style="{{isModifyTpl?'margin: 0; box-shadow: none;':''}}">
+    <view wx:if="{{recommendTpl.length}}">
+        <view class="tpl-group-header">
+            <view class="tpl-group-header-left">{{headerText.left}}</view>
+            <view catchtap="onAllTplTap" class="tpl-group-header-right">{{headerText.right}}</view>
+        </view>
+        <tpl-item-view isModifyTpl="{{isModifyTpl}}" tplItemData="{{item}}" wx:for="{{recommendTpl}}" wx:key="{{index}}"></tpl-item-view>
+    </view>
+    <block wx:for="{{tplGroups}}" wx:for-index="groupIndex" wx:for-item="groupItem" wx:key="{{groupIndex}}">
+        <view class="tpl-group-name">{{groupItem.name}}</view>
+        <tpl-item-view isModifyTpl="{{isModifyTpl}}" tplItemData="{{item}}" wx:for="{{groupItem.list}}" wx:key="{{index}}"></tpl-item-view>
+    </block>
+    <view class="tpl-all-btn-con">
+        <view catchtap="onAllTplTap" class="tpl-all-btn">查看全部模板</view>
+    </view>
+</view>

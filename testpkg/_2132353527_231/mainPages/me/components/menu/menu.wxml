@@ -1,0 +1,20 @@
+<view class="container">
+    <form-id-collector>
+        <view bindtap="{{item.name==='contact'?'':'onItemTap'}}" class="item-container" data-index="{{index}}" data-url="{{item.url}}" hidden="{{item.hidden}}" id="{{'meContainer'+index}}" wx:for="{{config}}" wx:key="{{item.title}}">
+            <view class="item-icon-container">
+                <view class="item-icon" id="{{item.id||'meItem'+index}}">
+                    <button class="item-icon item-button" openType="contact" wx:if="{{item.name==='contact'}}">
+                        <image class="item-icon" src="{{item.icon}}"></image>
+                    </button>
+                    <image class="item-icon" src="{{item.icon}}" wx:else></image>
+                    <view class="item-top-red-dot" hidden="{{!item.redDot}}"></view>
+                    <view class="item-top-count" hidden="{{item.topCount<=0}}">
+              {{item.topCount>99?'99+':item.topCount}}
+            </view>
+                </view>
+                <view class="item-title">{{item.title}}</view>
+                <view class="item-count">{{item.count>0?item.count:''}}</view>
+            </view>
+        </view>
+    </form-id-collector>
+</view>

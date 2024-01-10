@@ -1,0 +1,16 @@
+<view class="container">
+    <view class="tab-bar" style="top: {{navigationHeight-1}}px;">
+        <scroll-view scrollWithAnimation scrollX catchscroll="onScroll" class="tabs" scrollLeft="{{scrollLeft}}" style="{{isShowMore?'width: calc(100% - 95rpx)':''}}">
+            <view bindtap="onTabTap" class="tab {{curTab===tab.name?'tab-selected':''}}" data-name="{{tab.name}}" id="{{tab.name}}" wx:for="{{tabs}}" wx:for-item="tab" wx:key="{{tab.name}}">
+        {{tab.title}}
+      </view>
+        </scroll-view>
+        <view catchtap="goManagePage" class="more" wx:if="{{isShowMore}}">+</view>
+    </view>
+    <view style="z-index: 100001; position: fixed; left: 0; top: {{statusBarHeight}}px; height: {{navigationHeight-statusBarHeight}}px" wx:if="{{show_search}}">
+        <view bindtap="goSearchPage" class="search-btn" id="searchBtn">
+            <image class="search-btn-icon" src="{{imgRoot}}/discover/search_black.png"></image>
+        </view>
+    </view>
+</view>
+<wxs module="imgRoot" src="../../../../common/wxs/imgRoot.wxs" />

@@ -1,0 +1,10 @@
+<cover-view class="fullscreen-tip-con" wx:if="{{showTip&&showFullscreenTip}}">
+    <cover-view class="fullscreen-tip-text-con">
+        <cover-view class="fullscreen-tip-text">点这里可以全屏观看哦</cover-view>
+    </cover-view>
+    <cover-image class="triangle" src="{{imgRoot}}/play/video/fullscreen-tip-down.png"></cover-image>
+</cover-view>
+<cover-view bindtap="changeVideoFullscreen" class="fullscreen-btn" data-fullscreentype="{{isFullscreen?'exit':'fullscreen'}}">
+    <cover-image class="fullscreen-icon" src="{{imgRoot}}/play/video/{{isFullscreen?'not-':''}}fullscreen-btn.png"></cover-image>
+</cover-view>
+<wxs module="imgRoot" src="../../../common/wxs/imgRoot.wxs" />

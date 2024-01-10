@@ -1,0 +1,141 @@
+.box {
+    display: flex;
+    padding: 12px 15px;
+}
+
+.left {
+    padding-right: 12px;
+}
+
+.avatar {
+    width: 30px;
+    height: 30px;
+    margin-top: 3px;
+    border-radius: 50%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.content-header {
+    display: flex;
+}
+
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.nick {
+    display: inline;
+    line-height: 20px;
+    font-size: 14px;
+    color: #444444;
+    margin-right: 10px;
+}
+
+.time {
+    margin-top: 2px;
+    line-height: 14px;
+    font-size: 10px;
+    color: #8A8A8A;
+}
+
+.favor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.favor-btn {
+    width: 16px;
+    height: 16px;
+    padding: 1.5px;
+    opacity: 0.8;
+}
+
+.favor-count {
+    width: 29px;
+    line-height: 17px;
+    text-align: center;
+    font-size: 12px;
+    color: #98959A;
+}
+
+.comment-content {
+    margin-top: 8px;
+    line-height: 21px;
+    font-size: 15ppx;
+    font-weight: 400;
+    color: #3F3843;
+    word-break: break-all;
+}
+
+@media (max-device-width:370px) {
+    .comment-content {
+        font-size: 15px;
+    }
+
+    .nick {
+        font-size: 14px;
+    }
+
+    .time {
+        font-size: 10px;
+    }
+
+    .favor-count {
+        font-size: 12px;
+    }
+}
+
+.replied-comment {
+    margin-top: 8px;
+    padding-left: 4px;
+    border-left: 1.5px solid #DEDEDE;
+    border-radius: 1.3px;
+}
+
+.replied-comment .comment-text {
+    display: inline;
+}
+
+.reply-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 4px;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(152,149,154,1);
+    line-height: 17px;
+}
+
+.reply-btn-text {
+    width: 29px;
+    text-align: center;
+}
+
+.replied-nick {
+    color: #25ACFF;
+    margin-bottom: 4px;
+}
+
+.with-separator {
+    position: relative;
+}
+
+.with-separator:after {
+    position: absolute;
+    content: '';
+    left: 15px;
+    right: 15px;
+    bottom: 0;
+    height: 1px;
+    background-color: #DEDEDE;
+    transform-origin: 0 0;
+    transform: scaleY(0.5);
+}

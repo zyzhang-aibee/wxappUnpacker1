@@ -1,0 +1,9 @@
+<view style="padding-top: 100rpx;" wx:if="{{!list.length}}">
+    <loading-block></loading-block>
+</view>
+<view class="list">
+    <block wx:for="{{list}}" wx:for-item="dynamic" wx:key="{{dynamic.id}}">
+        <dynamic dynamic="{{dynamic}}" recommendMark="{{recommendMark}}" topic="{{topic}}" wx:if="{{dynamic.type&&dynamic.type===1}}"></dynamic>
+        <feed-ad index="{{index+1}}" type="{{dynamic}}" wx:else></feed-ad>
+    </block>
+</view>

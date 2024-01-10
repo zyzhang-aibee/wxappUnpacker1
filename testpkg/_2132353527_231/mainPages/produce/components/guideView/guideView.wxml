@@ -1,0 +1,5 @@
+<view catchtouchmove="preventScroll" class="mask" wx:if="{{guideData.type==='highlight'}}">
+    <slot></slot>
+</view>
+<tooltip autoHide="{{tooltip.autoHide}}" clickToHide="{{utils.isUndefined(tooltip.clickToHide)?true:tooltip.clickToHide}}" componentClass="{{tooltip.componentClass}}" duration="{{utils.isUndefined(tooltip.duration)?3000:tooltip.duration}}" elementId="{{tooltip.id}}" position="{{utils.isUndefined(tooltip.position)?'top':tooltip.position}}" text="{{tooltip.text}}" wx:if="{{tooltip}}"></tooltip>
+<wxs module="utils" src="../../../../common/wxs/utils.wxs" />

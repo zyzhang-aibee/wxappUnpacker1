@@ -1,0 +1,17 @@
+{
+    "navigationBarTitleText": "小年糕+",
+    "usingComponents": {
+        "search-input-bar": "/pages/community/components/discoverSearch/searchInputBar/searchInputBar",
+        "search-words-panel": "/pages/community/components/discoverSearch/searchWordsPanel/searchWordsPanel",
+        "search-tab-bar": "/pages/community/components/discoverSearch/searchTabBar/searchTabBar",
+        "album-list": "/pages/community/components/discoverSearch/albumList/albumList",
+        "user-list": "/pages/community/components/discoverSearch/userList/userList",
+        "search-empty-panel": "/pages/community/components/discoverSearch/searchEmptyPanel/searchEmptyPanel",
+        "search-loading": "/pages/community/components/discoverSearch/searchLoading/searchLoading",
+        "custom-navigation-bar": "/frameBase/Component/CustomNavigationBar/CustomNavigationBar/",
+        "xng": "/frameBase/components/xng/xng",
+        "user-info-authorizer": "/frameBase/components/user-info-authorizer/user-info-authorizer",
+        "global-components": "/common/components/global-components/global-components",
+        "xng-nav-bar": "/frameBase/Component/XngNavBar/XngNavBar/"
+    }
+}

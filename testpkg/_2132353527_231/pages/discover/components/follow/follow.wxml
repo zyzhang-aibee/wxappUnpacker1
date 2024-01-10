@@ -1,0 +1,6 @@
+<pull-down-refresh bind:loadMore="loadMore" bind:onRefresh="onPullDownRefresh" curTabName="{{TOPIC_NAMES.FOLLOW}}" refreshing="{{refreshing}}">
+    <empty-panel bind:goRecommend="goRecommend" wx:if="{{!list.length&&!follow.hasNext}}"></empty-panel>
+    <list auth="{{auth}}" bind:handleMoreAction="handleMoreAction" list="{{list}}" weakFriends="{{weakFriends}}" wx:else></list>
+    <loading-more bind:reload="onPageReachBottom" hasNext="{{follow.hasNext}}" isFetching="{{follow.isFetching}}" wx:if="{{list.length}}"></loading-more>
+</pull-down-refresh>
+<publish-menu listName="discoverFollow"></publish-menu>

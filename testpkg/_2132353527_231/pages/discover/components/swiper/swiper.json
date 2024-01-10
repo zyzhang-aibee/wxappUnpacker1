@@ -1,0 +1,17 @@
+{
+    "component": true,
+    "usingComponents": {
+        "swiper-guide": "./guide/guide",
+        "follow": "../follow/follow",
+        "recommend": "../recommend/recommend",
+        "nice": "../nice/nice",
+        "bless-topic": "../bless/bless",
+        "topic": "../topic/topic",
+        "loading-block": "/frameBase/components/loading/loadingBlock/loadingBlock",
+        "custom-navigation-bar": "/frameBase/Component/CustomNavigationBar/CustomNavigationBar/",
+        "xng": "/frameBase/components/xng/xng",
+        "user-info-authorizer": "/frameBase/components/user-info-authorizer/user-info-authorizer",
+        "global-components": "/common/components/global-components/global-components",
+        "xng-nav-bar": "/frameBase/Component/XngNavBar/XngNavBar/"
+    }
+}

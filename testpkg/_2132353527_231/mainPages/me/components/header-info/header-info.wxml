@@ -1,0 +1,26 @@
+<view class="container">
+    <view class="myself-container">
+        <user-info-authorizer bind:onComplete="onProfileEntryTap" class="avatar-container" effective="{{needAuth}}">
+            <image lazyLoad class="avatar" src="{{userInfo.hurl}}"></image>
+        </user-info-authorizer>
+        <view class="name-container">
+            <view class="nick nowrap-ellipsis" id="userNickId">{{userInfo.nick}}</view>
+            <view class="id nowrap-ellipsis">ID: {{userInfo.mid}}</view>
+            <button bindgetuserinfo="onPermissionTap" class="get-wx-name-btn nowrap-ellipsis" openType="getUserInfo" wx:if="{{!userInfo.has_auth}}">同步微信帐号</button>
+        </view>
+    </view>
+    <view class="follow-area">
+        <user-info-authorizer bind:onComplete="onProfileEntryTap" class="my-profile-container" effective="{{needAuth}}">
+            <view class="my-profile-btn">我的主页</view>
+        </user-info-authorizer>
+        <view bindtap="onFollowFansTap" class="follow-container" data-type="follow">
+            <text class="follow-num">{{userInfo.follow}}</text>
+            <text class="follow-text">关注</text>
+        </view>
+        <view class="follow-line"></view>
+        <view bindtap="onFollowFansTap" class="follow-container fans-con" data-type="fans">
+            <text class="follow-num">{{userInfo.follower}}</text>
+            <text class="follow-text">粉丝</text>
+        </view>
+    </view>
+</view>

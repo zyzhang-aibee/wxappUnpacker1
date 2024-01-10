@@ -1,0 +1,16 @@
+{
+    "component": true,
+    "usingComponents": {
+        "bless-tags": "./tags/tags",
+        "bless-feed": "./feed-list/feed-list",
+        "pull-down-refresh": "../pull-down-refresh/pull-down-refresh",
+        "publish-menu": "../common/publishMenu/publishMenu",
+        "loading-more": "/frameBase/components/loading/loadingMore/loadingMore",
+        "loading-animation": "/frameBase/components/loading-animation/fadingCircle/fadingCircle",
+        "custom-navigation-bar": "/frameBase/Component/CustomNavigationBar/CustomNavigationBar/",
+        "xng": "/frameBase/components/xng/xng",
+        "user-info-authorizer": "/frameBase/components/user-info-authorizer/user-info-authorizer",
+        "global-components": "/common/components/global-components/global-components",
+        "xng-nav-bar": "/frameBase/Component/XngNavBar/XngNavBar/"
+    }
+}

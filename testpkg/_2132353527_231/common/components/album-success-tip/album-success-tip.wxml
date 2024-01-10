@@ -1,0 +1,7 @@
+<view bindtap="onMaskTap" class="mask" wx:if="{{show}}"></view>
+<view bindtap="goPlayPage" class="tip-con" style="top:{{navigationHeight}}px;" wx:if="{{show}}">
+    <view class="tip-text">您的影集《</view>
+    <view class="title tip-text">{{album.title}}</view>
+    <view class="tip-text">》已经完成！</view>
+    <view class="tip-go-play tip-text">去查看</view>
+</view>

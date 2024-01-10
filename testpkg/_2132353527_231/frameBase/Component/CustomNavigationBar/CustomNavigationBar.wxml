@@ -1,0 +1,46 @@
+<view wx:if="{{!isCoverView}}">
+    <view class="navBar-holder" style="width: {{menuButtonWidth}}px; height: {{navigationHeight}}px;"></view>
+    <view class="navBar {{theme==='black'?'navBar-black':''}} {{theme==='transparent'?'navBar-transparent':''}}">
+        <view class="navBar-statusBar" style="height:{{statusBarHeight}}px"></view>
+        <view class="navBar-titlebar" style="height:{{navigationTitleBarHeight}}px">
+            <view class="navBar-content">
+                <view class="navBar-left-area" style="width: {{menuButtonWidth}}px;">
+                    <view bindtap="onBackTap" class="navBar-left" wx:if="{{isShowBack}}">
+                        <image class="navBar-left-icon" src="{{imgRoot}}/{{theme==='black'?'back_white':'back'}}.png"></image>
+                    </view>
+                </view>
+                <view class="navBar-right">
+                    <view class="navBar-right-area" wx:if="{{!customTitle}}">
+                        <image class="navBar-content-loading" src="{{imgRoot}}/loader.gif" wx:if="{{loading}}"></image>
+                        <view class="navBar-content-title" style="max-width: calc(100vw - {{menuButtonWidth*2}}px);">{{title}}</view>
+                    </view>
+                    <slot wx:else></slot>
+                </view>
+            </view>
+            <view class="capsule-holder" style="width: {{menuButtonWidth}}px;"></view>
+        </view>
+    </view>
+</view>
+<cover-view wx:if="{{isCoverView}}">
+    <cover-view class="navBar-holder" style="width: {{menuButtonWidth}}px; height: {{navigationHeight}}px"></cover-view>
+    <cover-view class="navBar {{theme==='black'?'navBar-black':''}} {{theme==='transparent'?'navBar-transparent':''}}">
+        <cover-view class="navBar-statusBar" style="height:{{statusBarHeight}}px"></cover-view>
+        <cover-view class="navBar-titlebar" style="height:{{navigationTitleBarHeight}}px">
+            <cover-view class="navBar-content">
+                <cover-view class="navBar-left-area" style="width: {{menuButtonWidth}}px;">
+                    <cover-view bindtap="onBackTap" class="navBar-left" wx:if="{{isShowBack}}">
+                        <cover-image class="navBar-left-icon" src="{{imgRoot}}/{{theme==='black'?'back_white':'back'}}.png"></cover-image>
+                    </cover-view>
+                </cover-view>
+                <cover-view class="navBar-right">
+                    <cover-view class="navBar-right-area">
+                        <cover-image class="navBar-content-loading" src="{{imgRoot}}/loader.gif" wx:if="{{loading}}"></cover-image>
+                        <cover-view class="navBar-content-title" style="max-width: calc(100vw - {{menuButtonWidth*2}}px);">{{title}}</cover-view>
+                    </cover-view>
+                </cover-view>
+            </cover-view>
+            <cover-view class="capsule-holder" style="width: {{menuButtonWidth}}px;"></cover-view>
+        </cover-view>
+    </cover-view>
+</cover-view>
+<wxs module="imgRoot" src="../../../common/wxs/imgRoot.wxs" />

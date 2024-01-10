@@ -1,0 +1,18 @@
+<view class="container">
+    <view class="comment-text">
+        <collapsible-text content="{{album.txt}}" fontSize="{{16}}" lineHeight="{{26}}"></collapsible-text>
+    </view>
+    <view class="album-warning" wx:if="{{album.d}}">抱歉，此动态已被作者删除，请欣赏其他推荐。</view>
+    <view class="album-warning" wx:elif="{{album.ban===ALBUM_TYPE_BAN.RED}}">抱歉，此动态涉嫌违规，请欣赏其他推荐。</view>
+    <view class="album-warning" wx:elif="{{album.ban===ALBUM_TYPE_BAN.YELLOW}}">抱歉，此动态正在审核中，请欣赏其他推荐。</view>
+    <view bindtap="handlePlay" class="album" wx:else>
+        <view class="album-title">
+            <view catchtap="goProfilePage" class="album-author-nick" data-mid="{{album.album_user.mid}}" wx:if="{{album.album_user}}">
+        @{{album.album_user.nick}}：</view>
+            <view style="display: inline" wx:else>@小年糕网友：</view>{{album.title}}
+    </view>
+        <big-cover album="{{album}}" showNiceAlbumFlag="{{false}}"></big-cover>
+    </view>
+</view>
+<wxs module="moment" src="../../../../../../common/wxs/moment.wxs" />
+<wxs module="imgRoot" src="../../../../../../common/wxs/imgRoot.wxs" />

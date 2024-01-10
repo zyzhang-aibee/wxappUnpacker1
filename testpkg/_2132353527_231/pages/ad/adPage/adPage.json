@@ -1,0 +1,11 @@
+{
+    "usingComponents": {
+        "exhibits": "./../components/exhibits/exhibits",
+        "goods-list": "./../components/goods-list/goods-list",
+        "custom-navigation-bar": "/frameBase/Component/CustomNavigationBar/CustomNavigationBar/",
+        "xng": "/frameBase/components/xng/xng",
+        "user-info-authorizer": "/frameBase/components/user-info-authorizer/user-info-authorizer",
+        "global-components": "/common/components/global-components/global-components",
+        "xng-nav-bar": "/frameBase/Component/XngNavBar/XngNavBar/"
+    }
+}

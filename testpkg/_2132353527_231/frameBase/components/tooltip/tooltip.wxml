@@ -1,0 +1,14 @@
+<view bindtap="onTap" class="tool-tip" style="{{style}}" wx:if="{{show}}">
+    <view class="tool-tip-text {{key}}-left" wx:if="{{type==='left'}}">
+        <text>{{text}}</text>
+        <view class="{{position==='top'?'other-top':'other-bottom'}}" style="left: {{midLine-8}}px;"></view>
+    </view>
+    <view class="tool-tip-text {{key}}-right" wx:elif="{{type==='right'}}">
+        <text>{{text}}</text>
+        <view class="{{position==='top'?'other-top':'other-bottom'}}" style="right: {{rightValue-8}}px;"></view>
+    </view>
+    <view class="tool-tip-text {{key}}" wx:else>
+        <text>{{text}}</text>
+        <view class="{{position==='top'?'other-top':'other-bottom'}} type-mid"></view>
+    </view>
+</view>

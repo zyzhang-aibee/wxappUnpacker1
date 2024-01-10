@@ -1,0 +1,14 @@
+{
+    "component": true,
+    "usingComponents": {
+        "action-sheet": "/frameBase/components/action-sheet/action-sheet",
+        "modal": "/frameBase/components/modal/modal",
+        "toast": "/frameBase/components/toast/toast",
+        "tooltip": "/frameBase/components/tooltip/tooltip",
+        "custom-navigation-bar": "/frameBase/Component/CustomNavigationBar/CustomNavigationBar/",
+        "xng": "/frameBase/components/xng/xng",
+        "user-info-authorizer": "/frameBase/components/user-info-authorizer/user-info-authorizer",
+        "global-components": "/common/components/global-components/global-components",
+        "xng-nav-bar": "/frameBase/Component/XngNavBar/XngNavBar/"
+    }
+}

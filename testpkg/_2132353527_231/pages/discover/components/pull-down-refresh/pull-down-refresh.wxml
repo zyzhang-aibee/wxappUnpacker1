@@ -1,0 +1,16 @@
+<view style="height: 100%">
+    <view class="indicator-container" style="transform: translateY({{indicatorTranslateY}}px); -webkit-transform: translateY({{indicatorTranslateY}}px);">
+        <view class="indicator">
+            <view class="indicator-dot"></view>
+            <view class="indicator-dot"></view>
+            <view class="indicator-dot"></view>
+            <view class="indicator-dot {{refreshing?'refreshing':''}}"></view>
+        </view>
+    </view>
+    <view class="success-tip" style="transform: translate3d(-50%, {{translateY}}px, 0); -webkit-transform: translate3d(-50%, {{translateY}}px, 0)" wx:if="{{success}}">
+    已为您刷新内容
+  </view>
+    <scroll-view scrollY bindscroll="onScroll" bindscrolltolower="loadMore" bindscrolltoupper="onScrollToUpper" bindtouchend="onTouchEnd" bindtouchmove="onTouchMove" bindtouchstart="onTouchStart" lowerThreshold="300" scrollTop="{{scrollTop}}" style="height: 100%; transform: translateY({{translateY}}px); transition: {{transition?'0.3s':'none'}}; -webkit-transform: translateY({{translateY}}px); -webkit-transition: {{transition?'0.3s':'none'}};">
+        <slot></slot>
+    </scroll-view>
+</view>

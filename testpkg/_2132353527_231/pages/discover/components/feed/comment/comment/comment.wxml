@@ -1,0 +1,14 @@
+<view catchtap="handleHide" class="mask" wx:if="{{show}}"></view>
+<view catchtouchmove="true" class="comment {{show?'comment-in':''}}">
+    <view class="header">
+        <view catchtap="handleHide" class="close-btn">
+            <image class="close-btn-icon" src="{{imgRoot}}/discover/comment_close.png"></image>
+        </view>
+        <view class="title">全部评论</view>
+    </view>
+    <scroll-view bindscrolltolower="loadMoreComment" class="comment-list" scrollY="{{true}}">
+        <comment-list commentEntities="{{dynamicComment.commentEntities}}" commentIds="{{dynamicComment.detailIds}}" dynamic="{{dynamic}}" lastTime="{{dynamicComment.lastTime}}"></comment-list>
+    </scroll-view>
+    <min-comment-input bind:comment="handleEditComment" edittingComment="{{edittingComment}}"></min-comment-input>
+</view>
+<wxs module="imgRoot" src="../../../../../../common/wxs/imgRoot.wxs" />

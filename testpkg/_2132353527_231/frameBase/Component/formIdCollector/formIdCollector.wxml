@@ -1,0 +1,5 @@
+<form reportSubmit bindsubmit="handleCollectFormId">
+    <button class="form-id-collector" formType="submit" hoverClass="none">
+        <slot></slot>
+    </button>
+</form>

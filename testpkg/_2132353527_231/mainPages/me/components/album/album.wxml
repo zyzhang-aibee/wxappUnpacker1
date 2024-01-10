@@ -1,0 +1,43 @@
+<block wx:if="{{isNormalAlbum||isArticle}}">
+    <view class="album">
+        <view bindtap="onAlbumTap" class="album-cover stat-album-action-play">
+            <view class="album-cover-mask"></view>
+            <image lazyLoad class="album-cover-bg" mode="aspectFill" src="{{album.url}}"></image>
+            <view class="album-cover-title {{isUserSelf?'album-cover-title-with-more':''}}">
+                <text class="album-cover-title-tag" wx:if="{{album.s===commonConst.ALBUM_TYPE_STATUS.FEATURED}}">佳作</text>
+                <text class="album-cover-title-tag color-blue" wx:if="{{album.s!==commonConst.ALBUM_TYPE_STATUS.FEATURED&&album.p===commonConst.ALBUM_PUBLISH_TYPE_STATUS.PUBLISH}}">发表</text>
+				{{album.title}}
+			</view>
+            <image class="album-cover-play" src="{{imgRoot}}/discover/cover_play_v2.png" wx:if="{{isNormalAlbum}}"></image>
+            <view class="album-cover-views" wx:if="{{album.views}}">{{album.views>100000?'100000+':album.views}}次{{isArticle?'阅读':'播放'}}</view>
+            <text class="album-cover-title-tag-article" wx:if="{{isArticle}}">图文作品</text>
+            <view class="album-cover-du" wx:if="{{album.du}}">{{utils.formatDuration(album.du)}}</view>
+            <view class="album-mask" wx:if="{{album.maskVisible&&album.album_type!==commonConst.ALBUM_TYPE.ARTICLE}}">
+                <view class="album-mask-text-a">{{album.maskTextA}}</view>
+                <view class="album-mask-text-b">{{album.maskTextB}}</view>
+            </view>
+            <image catchtap="onMoreTap" class="album-cover-more" src="{{imgRoot}}/album_more_action.png"></image>
+        </view>
+        <view class="album-actions-container">
+            <view class="album-time">{{moment.format(album.mt,'YY.MM.DD')}}</view>
+            <view class="album-actions">
+                <view bind:tap="onFavorTap" class="album-action stat-album-action-favor">
+                    <image class="album-action-icon" src="{{album.favor.has_favor?imgRoot+'/play/liked.png':imgRoot+'/play/like.png'}}"></image>
+                    <view>{{album.favor.total&&utils.limitCountToWan(album.favor.total)||'点赞'}}</view>
+                </view>
+                <view bind:tap="onCommentTap" class="album-action stat-album-action-comment" wx:if="{{isNormalAlbum}}">
+                    <image class="album-action-icon" src="{{imgRoot}}/play/message.png"></image>
+                    <view>{{album.comment_count&&utils.limitCountToWan(album.comment_count)||'评论'}}</view>
+                </view>
+                <button class="album-action album-action-share stat-album-action-share" data-dynamic="{{album}}" data-type="dynamic" openType="{{ban.share?'':'share'}}">
+                    <image class="album-action-icon" src="{{imgRoot}}/discover/wxshare_white_small.png"></image>分享
+				</button>
+            </view>
+        </view>
+    </view>
+    <view class="dividing"></view>
+</block>
+<wxs module="moment" src="../../../../common/wxs/moment.wxs" />
+<wxs module="commonConst" src="../../../../common/wxs/common.wxs" />
+<wxs module="imgRoot" src="../../../../common/wxs/imgRoot.wxs" />
+<wxs module="utils" src="../../../../common/wxs/discover/utils.wxs" />

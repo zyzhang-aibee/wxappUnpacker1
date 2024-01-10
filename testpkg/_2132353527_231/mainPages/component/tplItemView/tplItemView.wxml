@@ -1,0 +1,37 @@
+<view class="tpl-item {{tplItem.isGray?'tpl-gray':''}}">
+    <view catchtap="onPlayTplTap" class="tpl-cover-wrap">
+        <image lazyLoad class="tpl-cover" src="{{tplItem.url}}"></image>
+        <image class="tpl-play-icon" src="{{imgRoot}}/produce/tpl/play-icon-gray.png" wx:if="{{!isTplSearch&&!isModifyTpl&&!tplItem.isGray&&tplItem.id!==100000}}"></image>
+        <image class="tpl-play-icon-center" src="{{imgRoot}}/produce/tpl/play_icon_white.png" wx:if="{{(isTplSearch||isModifyTpl)&&!tplItem.isGray&&tplItem.id!==100000}}"></image>
+    </view>
+    <view catchtap="onPlayTplTap" class="tpl-word-container">
+        <block wx:if="{{tplItem.isArr}}">
+            <view class="tpl-word-title">
+                <text class="tpl-name {{textItem.type==='highLi'?'key-words':''}}" wx:for="{{tplItem.title}}" wx:for-item="textItem" wx:key="{{index}}">{{textItem.text}}</text>
+                <text class="tpl-new tpl-tag" wx:if="{{tplItem.is_new===1}}">NEW</text>
+                <text class="tpl-beta tpl-tag" wx:if="{{tplItem.gray}}">内灰</text>
+            </view>
+            <view class="tpl-word-desc">
+                <text class="{{textItem.type==='highLi'?'key-words':''}}" wx:for="{{tplItem.tip}}" wx:for-item="textItem" wx:key="{{index}}">{{textItem.text}}</text>
+            </view>
+        </block>
+        <block wx:else>
+            <view class="tpl-word-title">
+                <text class="tpl-name" id="tplTab{{tplIndex}}">{{tplItem.title}}</text>
+                <text class="tpl-new tpl-tag" wx:if="{{tplItem.is_new===1}}">NEW</text>
+                <text class="tpl-beta tpl-tag" wx:if="{{tplItem.gray}}">内灰</text>
+            </view>
+            <view class="tpl-word-desc">{{tplItem.tip}}</view>
+        </block>
+    </view>
+    <view bindtap="onChooseTap" class="tpl-choose-wrap" wx:if="{{!tplItem.isGray}}">
+        <view class="tpl-select-wrap" id="tplChoose{{tplIndex}}">
+            <view class="tpl-select" wx:if="{{tplItem.id===tplItem.selectedTplId}}">
+                <image class="tpl-select-img" src="https://static2.xiaoniangao.cn/mini_app/img/produce/tpl/select_red.png"></image>
+            </view>
+            <view class="tpl-choose" wx:else>选择</view>
+        </view>
+    </view>
+</view>
+<view class="spreader-line" hidden="{{isTplSearch||isModifyTpl}}"></view>
+<wxs module="imgRoot" src="../../../common/wxs/imgRoot.wxs" />

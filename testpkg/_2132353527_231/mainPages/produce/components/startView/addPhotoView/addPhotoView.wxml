@@ -1,0 +1,24 @@
+<guide-view class="guide-view" guideData="{{guideData}}" wx:if="{{isNewUser&&!hasDraftPhoto&&!isHideGuide}}">
+    <view class="new-user-mask" style="top: {{top}}px;">
+        <view catchtap="onHideGuideTap" class="close-img-con">
+            <image class="close-img" src="https://static2.xiaoniangao.cn/web/inner/img/produce/close.png"></image>
+        </view>
+        <view catchtap="onAddPhotosTap" class="add-photos-wrap" id="newUserAddPhoto">
+            <view class="add-photo-icon-text">
+                <view class="add-photo-icon-wrap">
+                    <image class="add-photo-icon" mode="scaleToFill" src="{{imgRoot}}/produce/add-icon-circle.png"></image>
+                </view>
+                <view class="add-photo-text">做影集</view>
+            </view>
+        </view>
+    </view>
+</guide-view>
+<view catchtap="onAddPhotosTap" class="add-photos-wrap {{hasDraftPhoto?'background-anim':''}}">
+    <view class="add-photo-icon-text">
+        <view class="add-photo-icon-wrap">
+            <image class="add-photo-icon" mode="scaleToFill" src="{{imgRoot}}/produce/{{hasDraftPhoto?'next':'add'}}-icon-circle.png"></image>
+        </view>
+        <view class="add-photo-text">{{hasDraftPhoto?'继续未完成的影集':'做影集'}}</view>
+    </view>
+</view>
+<wxs module="imgRoot" src="../../../../../common/wxs/imgRoot.wxs" />

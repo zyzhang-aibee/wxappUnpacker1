@@ -1,0 +1,70 @@
+.container {
+    position: relative;
+    height: 100%;
+}
+
+.should-guide {
+    animation: joggle 0.3s 4 alternate;
+}
+
+.guide {
+    position: absolute;
+    top: 100rpx;
+    right: -34rpx;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 60rpx;
+}
+
+.arrow-left {
+    display: flex;
+    align-items: center;
+    margin-left: -15rpx;
+}
+
+.arrow-left:before {
+    content: '';
+    display: inline-block;
+    border-top: solid 6rpx transparent;
+    border-right: solid 15rpx #6F6E6E;
+    border-bottom: solid 6rpx transparent;
+    border-left: solid 15rpx transparent;
+}
+
+.arrow-left:after {
+    content: '';
+    display: inline-block;
+    width: 30rpx;
+    height: 2rpx;
+    background-color: #6F6E6E;
+}
+
+.guide-text {
+    width: 30rpx;
+    margin: 20rpx 0;
+    line-height: 36rpx;
+    font-size: 26rpx;
+    font-weight: 500;
+    color: #6F6E6E;
+}
+
+@-webkit-keyframes joggle {
+    0% {
+        transform: translate3d(0,0,0);
+    }
+
+    100% {
+        transform: translate3d(-50rpx,0,0);
+    }
+}
+
+@keyframes joggle {
+    0% {
+        transform: translate3d(0,0,0);
+    }
+
+    100% {
+        transform: translate3d(-50rpx,0,0);
+    }
+}

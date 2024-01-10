@@ -1,0 +1,17 @@
+{
+    "navigationBarTitleText": "小年糕+",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTextStyle": "white",
+    "usingComponents": {
+        "photo-slide-view": "/pages/produce/photoEditPage/components/photoSlideView/photoSlideView/",
+        "big-photo-view": "/pages/produce/photoEditPage/components/bigPhotoView/bigPhotoView/",
+        "tool-bar-view": "/pages/produce/photoEditPage/components/toolBarView/toolBarView/",
+        "custom-navigation-bar": "/frameBase/Component/CustomNavigationBar/CustomNavigationBar/",
+        "xng": "/frameBase/components/xng/xng",
+        "user-info-authorizer": "/frameBase/components/user-info-authorizer/user-info-authorizer",
+        "global-components": "/common/components/global-components/global-components",
+        "xng-nav-bar": "/frameBase/Component/XngNavBar/XngNavBar/"
+    },
+    "disableScroll": true,
+    "backgroundColor": "#000000"
+}

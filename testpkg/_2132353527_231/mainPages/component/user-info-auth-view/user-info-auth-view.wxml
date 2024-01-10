@@ -1,0 +1,6 @@
+<view class="container" wx:if="{{show}}">
+    <view class="content">
+        <view class="tip">您还没有开启授权，账户资料无法同步到小年糕公众号</view>
+        <button bindgetuserinfo="onPermissionTap" class="btn" openType="getUserInfo">授权</button>
+    </view>
+</view>

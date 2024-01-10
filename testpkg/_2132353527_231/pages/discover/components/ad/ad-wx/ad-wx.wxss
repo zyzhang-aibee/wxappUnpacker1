@@ -1,0 +1,19 @@
+.hide-ad {
+    position: fixed;
+    top: -100%;
+    width: 100%;
+}
+
+.show-ad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    margin-bottom: 16rpx;
+    padding: 16rpx 30rpx;
+    background-color: #fff;
+}
+
+.ad {
+    border-radius: 8rpx;
+}

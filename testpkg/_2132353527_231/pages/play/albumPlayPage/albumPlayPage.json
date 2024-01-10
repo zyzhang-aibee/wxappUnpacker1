@@ -1,0 +1,17 @@
+{
+    "navigationBarTitleText": "小年糕+",
+    "usingComponents": {
+        "comment-list": "../components/comment/commentList/commentList",
+        "loading-footer": "/pages/discover/components/common/loadingFooter/loadingFooter",
+        "album-comment-input": "../components/comment/albumCommentInput/albumCommentInput",
+        "favorList": "./favorList/favorList",
+        "albumHeader": "./albumHeader/albumHeader",
+        "dynamic-share-card-generator": "/common/components/dynamic-share-card-generator/dynamic-share-card-generator",
+        "customer-service-entry": "/pages/discover/components/common/customer-service-entry/customer-service-entry",
+        "custom-navigation-bar": "/frameBase/Component/CustomNavigationBar/CustomNavigationBar/",
+        "xng": "/frameBase/components/xng/xng",
+        "user-info-authorizer": "/frameBase/components/user-info-authorizer/user-info-authorizer",
+        "global-components": "/common/components/global-components/global-components",
+        "xng-nav-bar": "/frameBase/Component/XngNavBar/XngNavBar/"
+    }
+}

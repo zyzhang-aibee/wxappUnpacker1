@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 56px);
+}
+
+.tip {
+    line-height: 46rpx;
+    font-size: 32rpx;
+    font-weight: 500;
+    color: #a2a2a2;
+}
+
+.tip:nth-child(2) {
+    margin-top: 10rpx;
+    margin-bottom: 62rpx;
+}
+
+.guide-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 184rpx;
+    height: 54rpx;
+    padding: 0;
+    border-radius: 27rpx;
+    line-height: 40rpx;
+    font-size: 28rpx;
+    color: #fff;
+    background-color: #ff2064;
+}

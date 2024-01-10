@@ -1,0 +1,22 @@
+<view bindtap="handleShowCommentList" class="container">
+    <view class="body">
+        <view class="comment-list">
+            <view class="comment-item" data-cid="{{comment.id}}" wx:for="{{dynamic.comments}}" wx:for-item="comment" wx:key="{{comment.id}}">
+                <view catchtap="goProfilePage" class="comment-nick" data-mid="{{comment.user.mid}}">{{comment.user.nick}}{{comment.to_user?'':'：'}}</view>
+                <block wx:if="{{comment.to_user}}">回复<view catchtap="goProfilePage" class="comment-nick" data-mid="{{comment.to_user.mid}}">@{{comment.to_user.nick}}：</view>
+                </block>{{comment.txt}}
+      </view>
+        </view>
+        <view class="separator"></view>
+        <view class="all-comment-link" wx:if="{{dynamic.comment_count}}">
+            <text>全部{{dynamic.comment_count}}条评论</text>
+            <user-info-authorizer bind:onComplete="handleComment" effective="{{needAuthComment}}" wx:if="{{fastEntryVisible&&dynamic.album_type!==ALBUM_TYPE.ARTICLE}}">
+                <view class="fast-entry">
+                    <image class="fast-entry-icon" src="{{imgRoot}}/discover/comment_blue.png"></image>
+                    <text>写评论</text>
+                </view>
+            </user-info-authorizer>
+        </view>
+    </view>
+</view>
+<wxs module="imgRoot" src="../../../../../../common/wxs/imgRoot.wxs" />

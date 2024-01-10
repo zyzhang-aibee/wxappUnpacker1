@@ -1,0 +1,5 @@
+<view bindtap="handleFollow" class="followed-btn" wx:if="{{isFollowed}}">
+  已关注
+</view>
+<image lazyLoad bindtap="handleFollow" class="follow-btn" src="{{imgRoot}}/discover/follow_btn.png" wx:else></image>
+<wxs module="imgRoot" src="../../../../../common/wxs/imgRoot.wxs" />

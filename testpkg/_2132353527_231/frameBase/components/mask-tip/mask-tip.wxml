@@ -1,0 +1,6 @@
+<view class="container" wx:if="{{show}}">
+    <text class="text">{{text}}</text>
+    <canvas canvasId="canvas" class="guide-canvas"></canvas>
+    <view bindtap="onTapMaskButton" class="confirm-btn">好的，我明白了</view>
+    <slot class="high-region"></slot>
+</view>

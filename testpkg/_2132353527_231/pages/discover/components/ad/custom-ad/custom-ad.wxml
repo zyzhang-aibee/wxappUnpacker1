@@ -1,0 +1,10 @@
+<view animation="{{animationData}}" class="wrapper">
+    <view class="container">
+        <view catchtap="onClose" class="custom-ad-close-btn" id="custom-ad-close-btn">
+            <view class="close-btn-text" wx:if="{{closeBtnText}}">{{closeBtnText}}</view>
+            <view class="close-btn-icon">x</view>
+        </view>
+        <image catchtap="onTap" class="ad custom-ad skeleton" data-banner="{{banner}}" data-cdate="{{cdate}}" data-lastclosedate="{{lastclosedate}}" data-m="{{index}}" data-n="{{screenIndex}}" data-type="{{1}}" mode="aspectFill" src="{{banner}}" style="width: {{width}}rpx; height: {{height}}rpx"></image>
+    </view>
+    <view class="margin"></view>
+</view>

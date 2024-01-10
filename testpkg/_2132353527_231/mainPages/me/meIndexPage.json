@@ -1,0 +1,16 @@
+{
+    "usingComponents": {
+        "album": "./components/album/album",
+        "dynamic": "./components/dynamic/dynamic",
+        "user-info-auth-view": "/mainPages/component/user-info-auth-view/user-info-auth-view",
+        "header-info": "./components/header-info/header-info",
+        "menu": "./components/menu/menu",
+        "qr-code-poster": "/frameBase/components/qr-code-poster/qr-code-poster",
+        "tab-bar": "./components/tab-bar/tab-bar",
+        "custom-navigation-bar": "/frameBase/Component/CustomNavigationBar/CustomNavigationBar/",
+        "xng": "/frameBase/components/xng/xng",
+        "user-info-authorizer": "/frameBase/components/user-info-authorizer/user-info-authorizer",
+        "global-components": "/common/components/global-components/global-components",
+        "xng-nav-bar": "/frameBase/Component/XngNavBar/XngNavBar/"
+    }
+}

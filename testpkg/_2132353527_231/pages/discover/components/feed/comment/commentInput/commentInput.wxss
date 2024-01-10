@@ -1,0 +1,101 @@
+.container {
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000002;
+}
+
+.mask {
+    z-index: 1000003;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.mask-transparent {
+    background-color: rgba(0,0,0,0);
+}
+
+.body {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000004;
+    border-top: solid 1px #efefef;
+    padding: 20rpx 30rpx 0rpx;
+    background-color: #fff;
+}
+
+.comment {
+    display: block;
+    font-size: 30rpx;
+    color: #25ACFF;
+    line-height: 42rpx;
+    text-align: center;
+    margin-bottom: 20rpx;
+}
+
+.input-box {
+    box-sizing: border-box;
+    background-color: #F5F6F7;
+    border-radius: 10rpx;
+    padding: 24rpx 12rpx 12rpx 24rpx;
+}
+
+.input {
+    box-sizing: border-box;
+    font-size: 30rpx;
+    line-height: 48rpx;
+    height: 96rpx;
+    width: 100%;
+    padding-right: 12rpx;
+}
+
+.input-num {
+    display: block;
+    text-align: right;
+    font-size: 26rpx;
+    line-height: 37rpx;
+    color: #98959A;
+}
+
+.footer {
+    margin: 16rpx 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.forward-checkbox {
+    display: flex;
+    align-items: center;
+    height: 56rpx;
+    font-size: 26rpx;
+    line-height: 48rpx;
+    color: #828282;
+}
+
+.checkbox-img {
+    width: 34rpx;
+    height: 34rpx;
+    margin-right: 12rpx;
+}
+
+.submit-btn {
+    display: inline-block;
+    border-radius: 6rpx;
+    font-size: 28rpx;
+    line-height: 48rpx;
+    color: #fff;
+    padding: 4rpx 20rpx;
+    background-color: #25ACFF;
+}
+
+.btn-disable {
+    background-color: #D5D5D5;
+}

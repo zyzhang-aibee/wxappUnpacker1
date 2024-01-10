@@ -1,0 +1,5 @@
+<action-sheet actions="{{actionSheet.options.actions}}" groups="{{actionSheet.options.groups}}" title="{{actionSheet.options.title}}" wx:if="{{actionSheet.show}}"></action-sheet>
+<modal btns="{{modal.options.btns}}" closable="{{modal.options.closable}}" content="{{modal.options.content}}" maskClosable="{{modal.options.maskClosable}}" title="{{modal.options.title}}" wx:if="{{modal.show}}"></modal>
+<toast duration="{{utils.isUndefined(toast.options.duration)?1500:toast.options.duration}}" mask="{{toast.options.mask}}" position="{{toast.options.position}}" title="{{toast.options.title}}" wx:if="{{toast.show}}"></toast>
+<tooltip autoHide="{{tooltip.options.autoHide}}" clickToHide="{{utils.isUndefined(tooltip.options.clickToHide)?true:tooltip.options.clickToHide}}" componentClass="{{tooltip.options.componentClass}}" duration="{{utils.isUndefined(tooltip.options.duration)?3000:tooltip.options.duration}}" elementId="{{tooltip.options.id}}" position="{{utils.isUndefined(tooltip.options.position)?'top':tooltip.options.position}}" text="{{tooltip.options.text}}" wx:if="{{tooltip.show}}"></tooltip>
+<wxs module="utils" src="../../../common/wxs/utils.wxs" />

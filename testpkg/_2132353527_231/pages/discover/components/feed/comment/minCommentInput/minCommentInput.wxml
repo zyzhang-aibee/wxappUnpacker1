@@ -1,0 +1,6 @@
+<user-info-authorizer bind:onComplete="handleEditComment" class="authorizer" effective="{{needAuthComment}}">
+    <view class="mini-comment-input">
+        <view class="comment-text-con{{edittingComment?'':' comment-empty'}}">{{edittingComment||'添加评论...'}}</view>
+        <view class="submit-btn{{edittingComment?'':' btn-disable'}}">提交</view>
+    </view>
+</user-info-authorizer>

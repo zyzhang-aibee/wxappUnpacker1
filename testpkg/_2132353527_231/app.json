@@ -1,0 +1,173 @@
+{
+    "pages": [
+        "pages/discover/discoverIndexPage/discoverIndexPage",
+        "mainPages/produce/producePage",
+        "mainPages/me/meIndexPage"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTitleText": "小年糕+",
+        "navigationBarTextStyle": "black",
+        "navigationStyle": "custom",
+        "renderingMode": "seperated"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/discover/discoverIndexPage/discoverIndexPage",
+                "text": "发现",
+                "iconPath": "assets/tabIcon/discover-new.png",
+                "selectedIconPath": "assets/tabIcon/discover-hl-new.png"
+            },
+            {
+                "pagePath": "mainPages/produce/producePage",
+                "text": "制作影集",
+                "iconPath": "assets/tabIcon/produce-new.png",
+                "selectedIconPath": "assets/tabIcon/produce-selected.png"
+            },
+            {
+                "pagePath": "mainPages/me/meIndexPage",
+                "text": "我",
+                "iconPath": "assets/tabIcon/me-new.png",
+                "selectedIconPath": "assets/tabIcon/me-hl-new.png"
+            }
+        ],
+        "color": "#666666",
+        "selectedColor": "#ff2064",
+        "borderStyle": "black",
+        "backgroundColor": "#fff"
+    },
+    "subPackages": [
+        {
+            "root": "pages/ad/",
+            "pages": [
+                "adPage/adPage"
+            ]
+        },
+        {
+            "root": "pages/community/",
+            "pages": [
+                "discoverSearchPage/discoverSearchPage",
+                "favorPage/favorPage",
+                "singleDynamicPage/singleDynamicPage",
+                "weakFriendPage/weakFriendPage",
+                "regionPage/regionPage",
+                "dynamicSharePage/dynamicSharePage",
+                "playPage/playPage",
+                "publishPage/publishPage",
+                "anuualSummaryPage/anuualSummaryPage",
+                "topicSortPage/topicSortPage",
+                "sameMusicPage/sameMusicPage"
+            ]
+        },
+        {
+            "root": "pages/produce/",
+            "pages": [
+                "albumCoverPage/albumCoverPage",
+                "albumSubtitleColorPage/albumSubtitleColorPage",
+                "draftHistoryPage/draftHistoryPage",
+                "editAlbumPage/editAlbumPage",
+                "editAlbumPage/modifyAlbumPage/modifyAlbumPage",
+                "editTextPage/editTextPage",
+                "modifyTplPage/modifyTplPage",
+                "photoEditMorePage/photoEditMorePage",
+                "photoEditPage/photoEditPage",
+                "photoEditTextPage/photoEditTextPage",
+                "recommendAllTplPage/recommendAllTplPage",
+                "recommendTplABPage/recommendTplABPage",
+                "recommendTplPage/recommendTplPage",
+                "removeDraftPhotoPage/removeDraftPhotoPage",
+                "tplSearchPage/tplSearchPage",
+                "videoInterceptPage/videoInterceptPage"
+            ]
+        },
+        {
+            "root": "pages/me/",
+            "pages": [
+                "photoListPage/photoListPage",
+                "photoDetailPage/photoDetailPage",
+                "albumListPage/albumListPage",
+                "recentlyDeletedPage/recentlyDeletedPage",
+                "donationPage/donationPage",
+                "morePage/morePage",
+                "messagePage/messagePage",
+                "blackListPage/blackListPage",
+                "favoriteListPage/favoriteListPage",
+                "localStorageManage/localStorageManage"
+            ]
+        },
+        {
+            "root": "pages/profile/",
+            "pages": [
+                "profilePage/profilePage",
+                "followFansPage/followFansPage"
+            ]
+        },
+        {
+            "root": "pages/bottle/",
+            "pages": [
+                "detailPage/detailPage",
+                "myBottlePage/myBottlePage",
+                "wishBottlePage/wishBottlePage",
+                "seekBottlePage/seekBottlePage",
+                "giftBottlePage/giftBottlePage"
+            ]
+        },
+        {
+            "root": "pages/common/",
+            "pages": [
+                "webViewPage/webViewPage",
+                "stopService/stopService"
+            ]
+        },
+        {
+            "root": "pages/music/",
+            "pages": [
+                "musicPage/musicPage",
+                "shareMusicPage/shareMusicPage",
+                "confirmLoginPage/confirmLoginPage"
+            ]
+        },
+        {
+            "root": "pages/play/",
+            "pages": [
+                "albumPlayPage/albumPlayPage",
+                "editTextPage/editTextPage",
+                "favorListPage/favorListPage"
+            ]
+        },
+        {
+            "root": "pages/specialPlay/",
+            "pages": [
+                "mv/musicPage/musicPage",
+                "mv/mvEditPage/mvEditPage",
+                "common/waitingFinishPage/waitingFinishPage",
+                "mv/userAdvisePage/userAdvisePage",
+                "article/editArticlePage/editArticlePage",
+                "article/editArticlePage/editTextPage/editTextPage",
+                "spliceVideosPage/spliceVideosPage",
+                "sendBlessingVideo/videoTypeChoosePage/videoTypeChoosePage"
+            ]
+        },
+        {
+            "root": "pages/xngVideoPage/",
+            "pages": [
+                "xngVideoPage"
+            ]
+        },
+        {
+            "root": "pages/downLoad/",
+            "pages": [
+                "downLoadPage/downLoadPage"
+            ]
+        }
+    ],
+    "navigateToMiniProgramAppIdList": [
+        "wx018f668a2cd22af8",
+        "wx06a561655ab8f5b2",
+        "wxd947200f82267e58",
+        "wx91d27dbf599dff74"
+    ],
+    "debug": false
+}

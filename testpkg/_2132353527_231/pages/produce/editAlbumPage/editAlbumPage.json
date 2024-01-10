@@ -1,0 +1,16 @@
+{
+    "usingComponents": {
+        "authorize-view": "/mainPages/produce/components/authorizeView/authorizeView/",
+        "helper-view": "/mainPages/produce/components/helperView/helperView/",
+        "tab-bar-view": "/pages/produce/editAlbumPage/components/tabBarView/tabBarView/",
+        "grid-view": "/pages/produce/editAlbumPage/components/gridView/gridView/",
+        "tpl-view": "/pages/produce/editAlbumPage/components/tplView/tplView/",
+        "subtitle-view": "/pages/produce/editAlbumPage/components/subtitleView/subtitleView/",
+        "submit-view": "/pages/produce/editAlbumPage/components/submitView/submitView/",
+        "custom-navigation-bar": "/frameBase/Component/CustomNavigationBar/CustomNavigationBar/",
+        "xng": "/frameBase/components/xng/xng",
+        "user-info-authorizer": "/frameBase/components/user-info-authorizer/user-info-authorizer",
+        "global-components": "/common/components/global-components/global-components",
+        "xng-nav-bar": "/frameBase/Component/XngNavBar/XngNavBar/"
+    }
+}

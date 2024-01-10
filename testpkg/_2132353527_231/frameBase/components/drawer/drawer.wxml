@@ -1,0 +1,7 @@
+<view catchtouchmove="onTouchMove" class="drawer {{show?'drawer-open':''}}">
+    <view bindtap="onHide" class="mask"></view>
+    <view class="content-wrapper">
+        <slot></slot>
+        <view bindtap="onHide" class="cancel-btn">取消</view>
+    </view>
+</view>

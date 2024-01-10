@@ -28,9 +28,17 @@ function doWxss(dir, cb, mainDir, nowDir) {
 
         function statistic(data) {
             function addStat(id) {
-                if (!importCnt[id]) importCnt[id] = 1, statistic(pureData[id]);
-				else ++importCnt[id];
+			    if (!importCnt[id]) {
+					if (pureData) {
+						importCnt[id] = 1;
+						statistic(pureData[id]);
+					}
+				} else {
+					++importCnt[id];
+				}
 			}
+
+            
 
             if (typeof data === "number") return addStat(data);
             for (let content of data) if (typeof content === "object" && content[0] == 2) addStat(content[1]);
@@ -240,7 +248,7 @@ function doWxss(dir, cb, mainDir, nowDir) {
 
             code = code.slice(0, code.indexOf('\n'));
             let vm = new VM({sandbox: {}});
-            pureData = vm.run(code + "\n_C");
+            pureData = vm.run(code + "}");
 
 			console.log("Guess wxss(first turn)...");
             preRun(dir, frameFile, mainCode, files, () => {

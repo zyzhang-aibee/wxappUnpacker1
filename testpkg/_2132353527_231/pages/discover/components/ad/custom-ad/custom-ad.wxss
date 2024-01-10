@@ -1,0 +1,72 @@
+.skeleton {
+    background: -webkit-gradient(linear,left top,right top,color-stop(25%,#f2f2f2),color-stop(37%,#e6e6e6),color-stop(63%,#f2f2f2));
+    background: -webkit-linear-gradient(left,#f2f2f2 25%,#e6e6e6 37%,#f2f2f2 63%);
+    background: linear-gradient(90deg,#f2f2f2 25%,#e6e6e6 37%,#f2f2f2 63%);
+    animation: skeleton-loading 1.4s ease infinite;
+    background-size: 400% 100%;
+}
+
+@-webkit-keyframes skeleton-loading {
+    0% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+.wrapper {
+    overflow: hidden;
+    height: 312rpx;
+}
+
+.container {
+    position: relative;
+    padding: 16rpx 30rpx;
+    background-color: #fff;
+}
+
+.custom-ad-close-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 32rpx;
+    right: 45rpx;
+    height: 28rpx;
+    padding: 0 14rpx;
+    border-radius: 28rpx;
+    color: #ddd;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.close-btn-text {
+    margin-right: 6rpx;
+    font-size: 22rpx;
+}
+
+.close-btn-icon {
+    position: relative;
+    top: -2rpx;
+    font-size: 20rpx;
+}
+
+.custom-ad {
+    display: block;
+    border-radius: 8rpx;
+}
+
+.margin {
+    height: 16rpx;
+}

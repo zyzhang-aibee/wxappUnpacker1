@@ -1,0 +1,10 @@
+<view class="box divider-e5">
+    <view class="left">
+        <image lazyLoad class="avatar" src="{{imgRoot}}/skeleton.gif"></image>
+    </view>
+    <view class="content">
+        <image lazyLoad class="nick" src="{{imgRoot}}/skeleton.gif"></image>
+        <image lazyLoad class="comment" src="{{imgRoot}}/skeleton.gif"></image>
+    </view>
+</view>
+<wxs module="imgRoot" src="../../../../../../common/wxs/imgRoot.wxs" />

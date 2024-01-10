@@ -1,0 +1,7 @@
+<pull-down-refresh bind:loadMore="loadMore" bind:onRefresh="onPullDownRefresh" curTabName="{{topic&&topic.name||curTabName}}" id="pull-down-refresh" refreshing="{{refreshing}}">
+    <region-choice topic="{{topic}}" wx:if="{{curTabName==='region'}}"></region-choice>
+    <list hasNext="{{feed.hasNext}}" isFetching="{{feed.isFetching}}" list="{{feedList}}" topic="{{topic}}"></list>
+    <no-more-prompt bind:goRecommend="goRecommend" len="{{feedList.length}}" wx:if="{{!feed.hasNext&&!feed.isFetching}}"></no-more-prompt>
+    <loading-more bind:reload="loadMore" hasNext="{{feed.hasNext}}" isFetching="{{feed.isFetching}}" noMoreText="这里没有更多内容啦，去推荐看看吧" wx:else></loading-more>
+</pull-down-refresh>
+<publish-menu title="投稿" wx:if="{{publishable}}"></publish-menu>

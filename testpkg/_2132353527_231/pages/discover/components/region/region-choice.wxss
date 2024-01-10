@@ -1,0 +1,20 @@
+.region-choice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border-bottom: 1rpx solid #D8D8D8;
+    background-color: #ffffff;
+}
+
+.region-choice-content {
+    font-size: 13px;
+    font-weight: 500;
+    color: #414141;
+}
+
+.region-choice-icon {
+    width: 17px;
+    height: 17px;
+    margin-left: 8px;
+}

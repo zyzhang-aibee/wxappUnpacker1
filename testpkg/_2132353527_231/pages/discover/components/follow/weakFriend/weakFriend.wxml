@@ -1,0 +1,23 @@
+<weak-friend-skeleton wx:if="{{weakFriends.isFirstFetch}}"></weak-friend-skeleton>
+<view class="container" hidden="{{!groups.length}}">
+    <view class="header">
+    可能感兴趣的人
+    <view bindtap="goWeakFriendPage" class="more-btn" wx:if="{{weakFriends.mids.length>2*3}}">查看更多</view>
+    </view>
+    <swiper class="swiper">
+        <swiper-item wx:for="{{groups}}" wx:for-item="group" wx:key="{{index}}">
+            <view class="screen">
+                <view class="card {{user==='empty'?'card-empty':''}}" wx:for="{{listWxs.mapList(group,weakFriends.friendEntities)}}" wx:for-item="user" wx:key="{{user.mid || index}}">
+                    <block wx:if="{{user==='empty'}}"></block>
+                    <block wx:else>
+                        <image lazyLoad bindtap="goProfilePage" class="avatar" data-mid="{{user.mid}}" mode="aspectFill" src="{{user.hurl}}"></image>
+                        <view class="nick">{{user.nick}}</view>
+                        <follow-btn isFollowed="{{!!weakFriends.followedFriends[user.mid]}}" mid="{{user.mid}}"></follow-btn>
+                    </block>
+                </view>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>
+<wxs module="listWxs" src="../../../../../common/wxs/discover/list.wxs" />
+<wxs module="imgRoot" src="../../../../../common/wxs/imgRoot.wxs" />

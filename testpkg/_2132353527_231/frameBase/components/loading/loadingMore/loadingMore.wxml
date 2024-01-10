@@ -1,0 +1,6 @@
+<view class="container">
+    <loading-animation color="#ff2064" size="{{20}}" wx:if="{{isFetching||hasNext}}"></loading-animation>
+    <view class="text" wx:if="{{isFetching&&hasNext}}">{{loadingText}}</view>
+    <view catchtap="reload" class="text" wx:if="{{!isFetching&&hasNext}}">重新加载</view>
+    <view class="text" wx:if="{{!isFetching&&!hasNext}}">{{noMoreText}}</view>
+</view>

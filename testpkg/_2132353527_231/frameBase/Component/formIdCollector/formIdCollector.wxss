@@ -1,0 +1,17 @@
+.form-id-collector {
+    position: static;
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: content-box;
+    font-size: 1em;
+    text-align: left;
+    text-decoration: none;
+    line-height: 1;
+    border-radius: 0;
+    -webkit-tap-highlight-color: transparent;
+    color: inherit;
+    overflow: visible;
+    background-color: transparent;
+}

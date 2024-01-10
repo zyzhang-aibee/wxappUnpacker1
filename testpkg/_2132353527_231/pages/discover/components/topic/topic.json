@@ -1,0 +1,17 @@
+{
+    "component": true,
+    "usingComponents": {
+        "list": "../recommend/list/list",
+        "pull-down-refresh": "../pull-down-refresh/pull-down-refresh",
+        "region-choice": "../region/region-choice",
+        "publish-menu": "../common/publishMenu/publishMenu",
+        "loading-more": "/frameBase/components/loading/loadingMore/loadingMore",
+        "loading-block": "/frameBase/components/loading/loadingBlock/loadingBlock",
+        "no-more-prompt": "./noMorePrompt/noMorePrompt",
+        "custom-navigation-bar": "/frameBase/Component/CustomNavigationBar/CustomNavigationBar/",
+        "xng": "/frameBase/components/xng/xng",
+        "user-info-authorizer": "/frameBase/components/user-info-authorizer/user-info-authorizer",
+        "global-components": "/common/components/global-components/global-components",
+        "xng-nav-bar": "/frameBase/Component/XngNavBar/XngNavBar/"
+    }
+}

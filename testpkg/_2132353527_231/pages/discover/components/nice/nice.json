@@ -1,0 +1,15 @@
+{
+    "component": true,
+    "usingComponents": {
+        "pull-down-refresh": "../pull-down-refresh/pull-down-refresh",
+        "album-swiper": "./albumSwiper/albumSwiper",
+        "group-list": "./groupList/groupList",
+        "loading-block": "/frameBase/components/loading/loadingBlock/loadingBlock",
+        "loading-more": "/frameBase/components/loading/loadingMore/loadingMore",
+        "custom-navigation-bar": "/frameBase/Component/CustomNavigationBar/CustomNavigationBar/",
+        "xng": "/frameBase/components/xng/xng",
+        "user-info-authorizer": "/frameBase/components/user-info-authorizer/user-info-authorizer",
+        "global-components": "/common/components/global-components/global-components",
+        "xng-nav-bar": "/frameBase/Component/XngNavBar/XngNavBar/"
+    }
+}

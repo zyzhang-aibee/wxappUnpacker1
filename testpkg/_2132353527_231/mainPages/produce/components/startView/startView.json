@@ -1,0 +1,14 @@
+{
+    "component": true,
+    "usingComponents": {
+        "add-photo-view": "/mainPages/produce/components/startView/addPhotoView/addPhotoView/",
+        "recommend-tpl-view": "/mainPages/produce/components/startView/recommendTplView/recommendTplView/",
+        "small-tools-view": "/mainPages/produce/components/startView/smallToolsView/smallToolsView/",
+        "tpl-list-view": "/mainPages/produce/components/startView/tpl-list-view/tpl-list-view",
+        "custom-navigation-bar": "/frameBase/Component/CustomNavigationBar/CustomNavigationBar/",
+        "xng": "/frameBase/components/xng/xng",
+        "user-info-authorizer": "/frameBase/components/user-info-authorizer/user-info-authorizer",
+        "global-components": "/common/components/global-components/global-components",
+        "xng-nav-bar": "/frameBase/Component/XngNavBar/XngNavBar/"
+    }
+}

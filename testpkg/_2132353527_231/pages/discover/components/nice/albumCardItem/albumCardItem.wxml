@@ -1,0 +1,10 @@
+<view bindtap="handleItemTap" class="item-ctn" wx:if="{{!item.ban}}">
+    <view class="img-box">
+        <image lazyLoad class="img" mode="aspectFill" src="{{item.url}}"></image>
+        <view class="article-flag" wx:if="{{item.album_type===ALBUM_TYPE.ARTICLE}}">图文</view>
+    </view>
+    <view class="text-ctn">
+        <view class="title">{{item.title}}</view>
+        <view class="story">{{item.story.text}}</view>
+    </view>
+</view>

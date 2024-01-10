@@ -1,0 +1,67 @@
+.loading-con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    color: #333333;
+}
+
+.fetch-btn {
+    padding: 10px 50px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff2064;
+    box-shadow: 0 2px 5px 0 rgba(255,116,159,0.6);
+    border-radius: 20px;
+    line-height: 1.4;
+}
+
+.scroll-tip {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 34px;
+    background: linear-gradient(180deg,rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.5) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tip-triangle {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff700;
+    animation: bounce 1s ease-in infinite alternate;
+}
+
+@-webkit-keyframes bounce {
+    0% {
+        transform: translate3d(0,-50%,0);
+    }
+
+    100% {
+        transform: translate3d(0,50%,0);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translate3d(0,-50%,0);
+    }
+
+    100% {
+        transform: translate3d(0,50%,0);
+    }
+}
+
+.tip-text {
+    font-size: 14px;
+    font-family: PingFangSC-Semibold;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 34px;
+    text-shadow: 0px 1px 2px rgba(0,0,0,0.46);
+    padding-left: 5px;
+}

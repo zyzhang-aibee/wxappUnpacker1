@@ -1,0 +1,5 @@
+<view class="no-more-prompt {{len?'small-padding':''}}">
+    <view class="prompt-content">这里暂时没有更多的内容啦</view>
+    <view class="prompt-content">去推荐看看吧</view>
+    <view bindtap="goRecommend" class="prompt-go-recommend">看推荐</view>
+</view>
